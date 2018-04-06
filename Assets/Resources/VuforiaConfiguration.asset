@@ -8,12 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2067402452, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
+  m_Script: {fileID: -2067402452, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: 
-    ufoLicenseKey: QWJlSU1Nai8vLy8vQUFBQUtQSEFXUHFtM0VMSHVoMWVNdGhFN293WU5UWVJNU2Y4SDE3alByd3BpYytnUWhwRTZ1aDhFWXArUDlwRUhKSUl4RXVwRnYvQWN4WllPSm1ISzRzdXRUdE9FRFRiOEZLM0FTeTM0YUYwWElnVXlPVDhET2VUbzVLbXo4dVcwUmQ5MnI1a0NSUWRoN1B5V3FFeFd4VmwzY1NyN1BBWDE1d2cxV0FoRUV3RmphQUVaV1FzTEI2RXEyQ2h2NU54T1VZMGczb2NoWlRkQTVtUjBLZVdGY2dWK2F2ak1QK1pKQ20zcXltY3E4SUVUUFYrR1V2ZjFhUEd2eWpwZS9NL3JiK2hwY2tSNjZnSVkzWDVybGZzYWZCTytkTTNVeDY0TEUxWldvREVOMUVFdDBpQzNDQnl6d3YrYXZmOFNsa2NST2J0Tm1Wckt5Mk9zNTkzNURlMkVGdysxdG1lTTdOTkppbkUzb2I0TTB5cVFPS00=
+    ufoLicenseKey: QVZqYTRvai8vLy8vQUFBQUtQelgvRGswcUVwamdncHpnMzJWUjF0YmlFUTkyTi9ibUJVbnQ1S2ZCOHFSYVZBUTQ5alZyM1ZUV1F0dVZLeUtFSzBJb0o2MktDcFQyRGRBZ2xyb0dtWml5WUtva21YcFhMREw3K3JibjIrTUJpd1cyRXczcHVKZ0lSZnc5enRQQlRXMmhadC9uVVArOE5mV2hZZHRUUXMrUENPQkxPTlVMMmJJdzdkZmNmR2FRQkdEUnBxNHgyMzdmWDJTTUVJdmc3VVBBNjlpVDFFbmV0MC9xd1NpTkhzV29JSHBEUFhXTnNlMVkxOTEzcEx6N2lxWEQvbE83NFFiWFFnYVFpaUtzZlJrZzRvT0duU3NaMjJxRUJDYTNiT25OMXZubDRKa2tZQ29GR1IxSVpxbm05TlBzbWppaERwdEQzS2gwek5ZbVJsbG5NSWEvZDVNVWl1R1QwZmpsQkZqWVp6YXloTGc2Q1N0Mlp0Z0hkSko=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -43,12 +43,8 @@ MonoBehaviour:
       FieldOfView: {x: 0, y: 0, z: 0, w: 0}
       ContainsMagnet: 0
   databaseLoad:
-    dataSetsToLoad:
-    - VuforiaMars_Images
-    - VuforiaMars_VuMark
-    dataSetsToActivate:
-    - VuforiaMars_Images
-    - VuforiaMars_VuMark
+    dataSetsToLoad: []
+    dataSetsToActivate: []
   videoBackground:
     clippingMode: 0
     numDivisions: 2

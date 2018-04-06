@@ -18,11 +18,15 @@ public class RecScript : MonoBehaviour {
 	public Animator charAnimator;
 	public AudioSource charAudio;
 	public bool isRecordingComplete;
+
+	public GameObject recordButton;
+	public GameObject reStartButton;
+	public GameObject playButton;
+
 	void Awake(){
 		instance = this;
 	}
-
-
+		
 
 	void OnEnable() {
 		EasyTouch.On_DoubleTap += On_DoubleTap;
@@ -38,7 +42,6 @@ public class RecScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		EasyTouch.On_DoubleTap += On_DoubleTap;
 	}
 
 
@@ -50,8 +53,6 @@ public class RecScript : MonoBehaviour {
 	}
 
 	public void Record(){
-		
-
 		if (!ReplayKit.isRecording) {
 			RecordPlayer ();
 			ReplayKit.StartRecording ();
@@ -64,15 +65,16 @@ public class RecScript : MonoBehaviour {
 
 	public void StopRecord(){
 		
-		charAnimator.Play ("Idle");
-		charAudio.Stop ();
-		print ("STOPPED");
-		ReplayKit.StopRecording ();
-		//if(!isRecordingComplete)
-			StartCoroutine (ShowRecording ());
-
-		if (ReplayKit.isRecording) {
-			
+		if (ReplayKit.isRecording){
+			charAnimator.Play ("Idle");
+			charAudio.Stop ();
+			recordButton.SetActive (true);
+			playButton.SetActive (true);
+			reStartButton.SetActive (true);
+		//	if (!isRecordingComplete) {
+				ReplayKit.StopRecording ();
+				StartCoroutine (ShowRecording ());
+		//	}
 		}
 	}
 
@@ -81,9 +83,9 @@ public class RecScript : MonoBehaviour {
 		isRecordingComplete = true;
 		print ("rePLAY BEGIN");
 		while (!ReplayKit.recordingAvailable) 
-		//{
+		{
 			yield return null;
-		//}
+		}
 		//yield return new WaitForEndOfFrame ();
 	//	print ("rePLAY END");
 		ReplayKit.Preview ();

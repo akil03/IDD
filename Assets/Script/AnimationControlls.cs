@@ -6,6 +6,8 @@ public class AnimationControlls : MonoBehaviour {
 
 	public Animator charAnimation;
 	public AudioSource audio;
+	public string Keyword = "TakeL";
+
 
 	void OnEnable() 
 	{
@@ -29,14 +31,21 @@ public class AnimationControlls : MonoBehaviour {
 	}
 
 	void On_play() {
-		charAnimation.Play ("Play");
+		charAnimation.Play (Keyword);
 		audio.Play ();
-		float length = charAnimation.GetCurrentAnimatorClipInfo (0).Length;
-
+		//Resources.Load('Audio/Wave');
+		float time = charAnimation.GetCurrentAnimatorClipInfo (0).Length;
+		StartCoroutine (StopANimation (25.10f));
 	}
 
-	public void StopAnimation() {
+	IEnumerator StopANimation(float time) 
+	{
+		yield return new WaitForSeconds (time);
 		RecScript.instance.StopRecord ();
+	}
+
+	public void Animation(string Key) {
+		Keyword = Key;
 	}
 
 }
