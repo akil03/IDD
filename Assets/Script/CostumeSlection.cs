@@ -14,7 +14,10 @@ public class CostumeSlection : MonoBehaviour {
 	public bool fullConstume;
 
 	public PlaneFinderBehaviour planefinder;
-	public GameObject fullbody;
+	public Renderer fullbody;
+	public Renderer uiBody;
+
+	public Material dark;
 
 	public CharecterStyle styles;
 	public CharecterStyle maincharecter;
@@ -61,6 +64,8 @@ public class CostumeSlection : MonoBehaviour {
 			styles.fullConstume [costumeIndex].SetActive (false);
 			maincharecter.fullConstume [costumeIndex].SetActive (false);
 			costumeIndex = costumeIndex + 1 != styles.fullConstume.Count ? costumeIndex + 1 : 0; 
+			fullbody.material = maincharecter.bodyMaterial [costumeIndex];
+			uiBody.material = maincharecter.bodyMaterial [costumeIndex];
 			styles.fullConstume [costumeIndex].SetActive (true);
 			maincharecter.fullConstume [costumeIndex].SetActive (true);
 		}
@@ -83,8 +88,9 @@ public class CostumeSlection : MonoBehaviour {
 		} else if(fullConstume == true) {
 			styles.fullConstume [costumeIndex].SetActive (false);
 			maincharecter.fullConstume [costumeIndex].SetActive (false);
-			fullbody.GetComponent<Renderer> ().materials[0] = maincharecter.bodyMaterial [costumeIndex];
 			costumeIndex = costumeIndex - 1 > -1 ? costumeIndex - 1 : styles.fullConstume.Count -1; 
+			fullbody.material = maincharecter.bodyMaterial [costumeIndex];
+			uiBody.material = maincharecter.bodyMaterial [costumeIndex];
 			styles.fullConstume [costumeIndex].SetActive (true);
 			maincharecter.fullConstume [costumeIndex].SetActive (true);
 		}

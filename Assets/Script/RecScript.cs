@@ -19,9 +19,7 @@ public class RecScript : MonoBehaviour {
 	public AudioSource charAudio;
 	public bool isRecordingComplete;
 
-	public GameObject recordButton;
-	public GameObject reStartButton;
-	public GameObject playButton;
+	public GameObject mainMenu;
 
 	void Awake(){
 		instance = this;
@@ -47,6 +45,7 @@ public class RecScript : MonoBehaviour {
 
 	public void On_DoubleTap(Gesture gesture) 
 	{
+		AnimationControlls.instance.StopAllCoroutines ();
 		print ("Doubletap");
 		StopRecord ();
 
@@ -58,23 +57,17 @@ public class RecScript : MonoBehaviour {
 			ReplayKit.StartRecording ();
 			isRecordingComplete = false;
 			print ("recording");
-			Invoke ("StopRecord", 15);
-			//isRecording = true;
 		}
 	}
 
 	public void StopRecord(){
-		
+		print ("Stopcalled");
 		if (ReplayKit.isRecording){
 			charAnimator.Play ("Idle");
 			charAudio.Stop ();
-			recordButton.SetActive (true);
-			playButton.SetActive (true);
-			reStartButton.SetActive (true);
-		//	if (!isRecordingComplete) {
+			mainMenu.SetActive(true);
 				ReplayKit.StopRecording ();
 				StartCoroutine (ShowRecording ());
-		//	}
 		}
 	}
 

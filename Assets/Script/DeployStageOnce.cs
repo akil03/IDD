@@ -8,9 +8,7 @@ public class DeployStageOnce : MonoBehaviour {
 	private PositionalDeviceTracker _deviceTracker;
 	private GameObject _previousAnchor;
 
-	public GameObject recordButton;
-	public GameObject resetbutton;
-	public GameObject playButton;
+	public GameObject mainMenu;
 
 
 	public GameObject boy;
@@ -59,9 +57,7 @@ public class DeployStageOnce : MonoBehaviour {
 				AnchorStage.transform.localPosition = Vector3.zero;
 				AnchorStage.transform.localRotation = Quaternion.identity;
 				AnchorStage.SetActive (true);
-				recordButton.SetActive (true);
-				resetbutton.SetActive (true);
-				playButton.SetActive (true);
+				mainMenu.SetActive (true);
 				RotateTowardCamera (boy);
 			}
 
@@ -83,10 +79,8 @@ public class DeployStageOnce : MonoBehaviour {
 
 	public void ResetPressed() 
 	{
-		recordButton.SetActive (false);
-		resetbutton.SetActive (false);
 		AnchorStage.SetActive (false);
-		playButton.SetActive (false);
+		mainMenu.SetActive (false);
 		transform.GetComponent<PlaneFinderBehaviour> ().enabled = true;
 		placed = false;
 	}
