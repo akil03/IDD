@@ -9,14 +9,6 @@ public class AnimationControlls : MonoBehaviour {
 
 	public Animator charAnimation;
 	public AudioSource audio;
-//	public AudioClip[] audios;
-//	public AudioClip Wave;
-//	public AudioClip Worm;
-//	public AudioClip Clap;
-//	public AudioClip TakeL;
-//	public AudioClip Robot;
-//	public AudioClip Electro;
-//	public AudioClip Salt;
 	public List<AudioNames> audioname;
 	public float audiolenght;
 	public string Keyword = "Wave";
@@ -49,6 +41,7 @@ public class AnimationControlls : MonoBehaviour {
 	}
 
 	void On_play() {
+		print (Keyword);
 		charAnimation.Play (Keyword);
 
 		foreach (var data in audioname) {

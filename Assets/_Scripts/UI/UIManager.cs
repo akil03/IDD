@@ -7,9 +7,10 @@ public class UIManager : MonoBehaviour {
 	public float sideBtnAnimTime;
 	bool isExpanded;
 
+	public GameObject arCamera;
+
 	public List<ListScreens> screens;
 
-	// Use this for initialization
 	void Start () {
 		
 	}
@@ -48,6 +49,8 @@ public class UIManager : MonoBehaviour {
 		foreach (var screen in screens) {
 			if (screen.buttonNumber == ButtonNumber) {
 				ExpandScreen (ButtonNumber, screen.ScreenTarget);
+			} else {
+				screen.ScreenTarget.SetActive (false);
 			}
 		}
 	}
@@ -55,6 +58,7 @@ public class UIManager : MonoBehaviour {
 	public void ExpandScreen(int buttonnumber,GameObject Target) {
 		SideBtns[buttonnumber].DOScale(new Vector3(6,6,6), 0.5f).SetEase(Ease.Linear).OnComplete(() => {
 			Target.SetActive(true);
+			arCamera.SetActive(false);
 			InstantShrink();
 		});
 	}
