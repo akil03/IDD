@@ -7,8 +7,6 @@ using DG;
 
 public class ZoomScript : MonoBehaviour {
 
-//	private TextMesh textMesh;
-
 	public Vector2 startPoint;
 	public float distance;
 	public string direction;
@@ -17,95 +15,102 @@ public class ZoomScript : MonoBehaviour {
 
 	RaycastHit Hit;
 
-	void OnEnable(){
+	void OnEnable()
+	{
 		EasyTouch.On_TouchStart2Fingers += On_TouchStart2Fingers;
 		EasyTouch.On_PinchIn += On_PinchIn;
 		EasyTouch.On_PinchOut += On_PinchOut;
-	//	EasyTouch.On_Swipe += On_Swipe;
 		EasyTouch.On_LongTap += On_LongPress;
 	}
 
-	void Update() {
+	void Update() 
+	{
 		if (charecterSelected == true) {
-			if (Input.GetMouseButton (0)) {
+			if (Input.GetMouseButton (0)) 
+			{
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-				if (Physics.Raycast (ray, out Hit)) {
-					if (Physics.Raycast (ray, out Hit)) {
+				if (Physics.Raycast (ray, out Hit)) 
+				{
+					if (Physics.Raycast (ray, out Hit)) 
+					{
 						if (Hit.transform.gameObject.tag == "Cube") {
 							return;
 						} else {
 							Vector3 target = Hit.point;
 							transform.DOMove (target, 1f, false);
-						
 						}
 					}
 				}
 			}
-			if (Input.GetMouseButtonUp (0)) {
+			if (Input.GetMouseButtonUp (0)) 
+			{
 				charecterSelected = false;
 			}
 		}
 	}
 
-	void OnDisable(){
+	void OnDisable()
+	{
 		UnsubscribeEvent();
 	}
 
-	void OnDestroy(){
+	void OnDestroy()
+	{
 		UnsubscribeEvent();
 	}
-	void UnsubscribeEvent(){
+	void UnsubscribeEvent()
+	{
 		EasyTouch.On_TouchStart2Fingers -= On_TouchStart2Fingers;
 		EasyTouch.On_PinchIn -= On_PinchIn;
 		EasyTouch.On_PinchOut -= On_PinchOut;
 	}
 		
-		
-	private void On_TouchStart2Fingers( Gesture gesture){
-			EasyTouch.SetEnableTwist( false);
-			EasyTouch.SetEnablePinch( true);
+	private void On_TouchStart2Fingers( Gesture gesture)
+	{
+		EasyTouch.SetEnableTwist( false);
+		EasyTouch.SetEnablePinch( true);
 	}
-
-
-	// At the pinch in
-	private void On_PinchIn(Gesture gesture){
 		
-			float zoom = Time.deltaTime * gesture.deltaPinch * 0.01f;
-
-			Vector3 scale = transform.localScale;
-		if (scale.x > 0.001 && scale.y > 0.001 && scale.z > 0.001) {
+	private void On_PinchIn(Gesture gesture)
+	{
+		float zoom = Time.deltaTime * gesture.deltaPinch * 0.01f;
+		Vector3 scale = transform.localScale;
+		if (scale.x > 0.001 && scale.y > 0.001 && scale.z > 0.001) 
+		{
 			transform.localScale = new Vector3 (scale.x - zoom, scale.y - zoom, scale.z - zoom);
-		
 		}
 	}
 
-	private void On_LongPress(Gesture gesture) {
+	private void On_LongPress(Gesture gesture) 
+	{
 		charecterSelected = true;
 	}
 		
-	private void On_PinchOut(Gesture gesture){
-		
+	private void On_PinchOut(Gesture gesture)
+	{
 			float zoom = Time.deltaTime * gesture.deltaPinch * 0.01f;
-
 			Vector3  scale = transform.localScale ;
 			transform.localScale = new Vector3( scale.x + zoom, scale.y +zoom,scale.z+zoom);
-
-
 	}
 
-	private void On_Swipe(Gesture gesture) {
-		if (Input.touchCount == 1) {
-			if (gesture.swipe.ToString () == "Left") {
-			
+	private void On_Swipe(Gesture gesture) 
+	{
+		if (Input.touchCount == 1) 
+		{
+			if (gesture.swipe.ToString () == "Left") 
+			{
 				transform.position -= new Vector3 ((0.02f), 0, 0);
-			} else if (gesture.swipe.ToString () == "Right") {
-			
+			}
+			else if (gesture.swipe.ToString () == "Right") 
+			{
 				transform.position += new Vector3 ((0.02f), 0, 0);
-			} else if (gesture.swipe.ToString () == "Up") {
-			
+			}
+			else if (gesture.swipe.ToString () == "Up") 
+			{
 				transform.position += new Vector3 (0, 0, (0.02f));
-			} else if (gesture.swipe.ToString () == "Down") {
-			
+			}
+			else if (gesture.swipe.ToString () == "Down") 
+			{
 				transform.position -= new Vector3 (0, 0, (0.02f));
 			}
 		}

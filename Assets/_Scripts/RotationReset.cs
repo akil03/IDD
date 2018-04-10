@@ -8,14 +8,11 @@ public class RotationReset : MonoBehaviour {
 
 	RaycastHit Hit;
 
-
-	// Use this for initialization
 	void Start () {
 		transform.LookAt (arcam.transform);
 		transform.rotation = Quaternion.Euler (0, transform.rotation.y, 0);
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 			
 	}
