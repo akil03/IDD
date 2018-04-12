@@ -4,95 +4,71 @@ using UnityEngine;
 using Vuforia;
 
 public class CostumeSlection : MonoBehaviour {
-
-	public int hairIndex = 0;
-	public int clothIndex = 0;
-	public int costumeIndex = 0;
-
+	
 	public bool hairSelected;
 	public bool clothSelected;
 	public bool fullConstume;
 
 	public PlaneFinderBehaviour planefinder;
-	public Renderer fullbody;
-	public Renderer uiBody;
-
-	public Material dark;
-
-	public CharecterStyle styles;
-	public CharecterStyle maincharecter;
-	// Use this for initialization
+	public List<CharecterStyle> stylebodyparts;
 
 	void Start () {
-		//StartCoroutine (randomSelection ());
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	IEnumerator randomSelection() {
-		yield return new WaitForSeconds (Random.Range (0, 3));
-		maincharecter.fullConstume [costumeIndex].SetActive (false);
-		int num = Random.Range (0, 3);
-		costumeIndex = num;
-		maincharecter.fullConstume [costumeIndex].SetActive (true);
-		StartCoroutine (randomSelection ());
-
 	}
 
 	public void Select() {
-		planefinder.enabled = true;
+		MainUiController.instance.CharecterSelectionDone ();
 	}
 
 	public void Next()
 	{
 		if (hairSelected == true) {
-			styles.hair [hairIndex].SetActive (false);
-			maincharecter.hair [hairIndex].SetActive (false);
-			hairIndex = hairIndex + 1 != styles.hair.Count ? hairIndex + 1 : 0; 
-			maincharecter.hair [hairIndex].SetActive (true);
-			styles.hair [hairIndex].SetActive (true);
+//			styles.hair [hairIndex].SetActive (false);
+//			maincharecter.hair [hairIndex].SetActive (false);
+//			hairIndex = hairIndex + 1 != styles.hair.Count ? hairIndex + 1 : 0; 
+//			maincharecter.hair [hairIndex].SetActive (true);
+//			styles.hair [hairIndex].SetActive (true);
 		} else if (clothSelected == true) {
-			styles.Dress [clothIndex].SetActive (false);
-			maincharecter.Dress [clothIndex].SetActive (false);
-			clothIndex = clothIndex + 1 != styles.Dress.Count ? clothIndex + 1 : 0; 
-			styles.Dress [clothIndex].SetActive (true);
-			maincharecter.Dress [clothIndex].SetActive (true);
+//			styles.Dress [clothIndex].SetActive (false);
+//			maincharecter.Dress [clothIndex].SetActive (false);
+//			clothIndex = clothIndex + 1 != styles.Dress.Count ? clothIndex + 1 : 0; 
+//			styles.Dress [clothIndex].SetActive (true);
+//			maincharecter.Dress [clothIndex].SetActive (true);
 		} else if(fullConstume == true) {
-			styles.fullConstume [costumeIndex].SetActive (false);
-			maincharecter.fullConstume [costumeIndex].SetActive (false);
-			costumeIndex = costumeIndex + 1 != styles.fullConstume.Count ? costumeIndex + 1 : 0; 
-			fullbody.material = maincharecter.bodyMaterial [costumeIndex];
-			uiBody.material = maincharecter.bodyMaterial [costumeIndex];
-			styles.fullConstume [costumeIndex].SetActive (true);
-			maincharecter.fullConstume [costumeIndex].SetActive (true);
+			foreach (var objects in stylebodyparts) 
+			{
+				objects.fullConstume [objects.Index].SetActive (false);
+				objects.Index = objects.Index + 1 != objects.fullConstume.Count ? objects.Index + 1 : 0; 
+				objects.fullConstume [objects.Index].SetActive (true);
+				objects.body.material = objects.bodyMaterial [objects.Index];
+			}
+
 		}
 	}
 
 	public void Previous()
 	{
 		if (hairSelected == true) {
-			styles.hair [hairIndex].SetActive (false);
-			maincharecter.hair [hairIndex].SetActive (false);
-			hairIndex = hairIndex - 1 < 0 ? hairIndex - 1 : styles.hair.Count -1; 
-			maincharecter.hair [hairIndex].SetActive (true);
-			styles.hair [hairIndex].SetActive (true);
+//			styles.hair [hairIndex].SetActive (false);
+//			maincharecter.hair [hairIndex].SetActive (false);
+//			hairIndex = hairIndex - 1 < 0 ? hairIndex - 1 : styles.hair.Count -1; 
+//			maincharecter.hair [hairIndex].SetActive (true);
+//			styles.hair [hairIndex].SetActive (true);
 		} else if (clothSelected == true) {
-			styles.Dress [clothIndex].SetActive (false);
-			maincharecter.Dress [clothIndex].SetActive (false);
-			clothIndex = clothIndex - 1 < 0 ? clothIndex - 1 : styles.Dress.Count -1; 
-			styles.Dress [clothIndex].SetActive (true);
-			maincharecter.Dress [clothIndex].SetActive (true);
+//			styles.Dress [clothIndex].SetActive (false);
+//			maincharecter.Dress [clothIndex].SetActive (false);
+//			clothIndex = clothIndex - 1 < 0 ? clothIndex - 1 : styles.Dress.Count -1; 
+//			styles.Dress [clothIndex].SetActive (true);
+//			maincharecter.Dress [clothIndex].SetActive (true);
 		} else if(fullConstume == true) {
-			styles.fullConstume [costumeIndex].SetActive (false);
-			maincharecter.fullConstume [costumeIndex].SetActive (false);
-			costumeIndex = costumeIndex - 1 > -1 ? costumeIndex - 1 : styles.fullConstume.Count -1; 
-			fullbody.material = maincharecter.bodyMaterial [costumeIndex];
-			uiBody.material = maincharecter.bodyMaterial [costumeIndex];
-			styles.fullConstume [costumeIndex].SetActive (true);
-			maincharecter.fullConstume [costumeIndex].SetActive (true);
+
+			foreach (var objects in stylebodyparts) 
+			{
+				objects.fullConstume [objects.Index].SetActive (false);
+				objects.Index = objects.Index -1> -1 ? objects.Index - 1 : objects.fullConstume.Count -1; 
+				objects.fullConstume [objects.Index].SetActive (true);
+				objects.body.material = objects.bodyMaterial [objects.Index];
+			}
+
 		}
 	}
 		
@@ -105,4 +81,6 @@ public class CharecterStyle
 	public List<GameObject> hair;
 	public List<GameObject> fullConstume;
 	public List<Material> bodyMaterial;
+	public Renderer body;
+	public int Index = 0;
 }

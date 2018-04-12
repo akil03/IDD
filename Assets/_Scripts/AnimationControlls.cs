@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class AnimationControlls : MonoBehaviour {
 
@@ -9,15 +10,16 @@ public class AnimationControlls : MonoBehaviour {
 
 	public Animator charAnimation;
 	public AudioSource audio;
+	public GameObject effectImage;
 	public List<AudioNames> audioname;
 	public float audiolenght;
-	public string Keyword = "Wave";
-	public string audioKey = "Wave";
+	public string Keyword = "TakeL";
+	public string audioKey;
 	public string EndAnimationKey = null;
 	public List<EffectName> effects;
 
 	public Animator effectcharAnimator;
-	public Transform instantiationPoint;
+	public Transform[] instantiationPoint;
 	public Transform initialCharPoint;
 
 	public GameObject effectSelectionScreen;
@@ -25,8 +27,7 @@ public class AnimationControlls : MonoBehaviour {
 	public GameObject arCamera;
 	public GameObject mainMenu;
 
-	private GameObject particalss;
-	private string animationName;
+	private GameObject instantiatedImage;
 
 	void OnEnable() 
 	{
@@ -43,12 +44,11 @@ public class AnimationControlls : MonoBehaviour {
 		RecScript.RecordPlayer -= On_play;
 		CharecterActionManager.PlayAnimation -= On_play;
 	}
-	// Use this for initialization
+
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}
@@ -56,6 +56,9 @@ public class AnimationControlls : MonoBehaviour {
 	void On_play() {
 		print (Keyword);
 		charAnimation.Play (Keyword);
+		if (instantiatedImage) {
+			Destroy (instantiatedImage);
+		}
 
 		foreach (var data in audioname) {
 			if (data.Audioname == Keyword) {
@@ -78,9 +81,8 @@ public class AnimationControlls : MonoBehaviour {
 		print (EndAnimationKey);
 		if (EndAnimationKey != "") {
 			charAnimation.Play (EndAnimationKey);
-			print (charAnimation.GetCurrentAnimatorClipInfo (0).Length);
-			yield return new WaitForSeconds (charAnimation.GetCurrentAnimatorClipInfo (0).Length);
-			Instantiate (particalss, initialCharPoint, false);
+			yield return new WaitForSeconds (1f);
+			instantiatedImage = Instantiate (effectImage, instantiationPoint[UnityEngine.Random.Range(0,instantiationPoint.Length)], false);
 			StartCoroutine (StopANimation(2f));
 		} else {
 			print ("Skipped");
@@ -100,7 +102,7 @@ public class AnimationControlls : MonoBehaviour {
 		audioKey = Key;
 	}
 
-	public void EndActoionSelection(string actionName) 
+	public void EndActoionSelection(string actionName)
 	{
 		EndAnimationKey = actionName;
 	}
@@ -109,7 +111,6 @@ public class AnimationControlls : MonoBehaviour {
 	{
 		StopAllCoroutines ();
 		EndAnimationKey = effects [Index].animationname;
-		particalss = effects [Index].partical;
 		effectcharAnimator.Play (effects [Index].animationname);
 		StartCoroutine (effectInstantiation (effectcharAnimator.GetCurrentAnimatorClipInfo (0).Length));
 	}
@@ -117,14 +118,12 @@ public class AnimationControlls : MonoBehaviour {
 	public IEnumerator effectInstantiation(float time)
 	{
 		yield return new WaitForSeconds (time);
-		Instantiate (particalss, instantiationPoint, false);
 	}
 
 	public void StartAR() 
 	{
 		arCamera.SetActive (true);
 		mainMenu.SetActive (false);
-		//animationSelectionScreen.SetActive (false);
 		effectSelectionScreen.SetActive(false);
 		effectSelectionCamera.SetActive (false);	
 	}

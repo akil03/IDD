@@ -6,10 +6,8 @@ public class UIManager : MonoBehaviour {
 	public RectTransform[] SideBtns;
 	public float sideBtnAnimTime;
 	bool isExpanded;
-
 	public GameObject arCamera;
 	public GameObject bg;
-
 	public List<ListScreens> screens;
 
 	void Start () {
@@ -70,6 +68,7 @@ public class UIManager : MonoBehaviour {
 			SideBtns[i-1].DOScale (Vector3.zero,0).SetEase (Ease.Linear);
 		}
 	}
+		
 }
 
 [System.Serializable]
@@ -77,5 +76,4 @@ public class UIManager : MonoBehaviour {
 public class ListScreens{
 	public int buttonNumber;
 	public GameObject ScreenTarget;
-
 }

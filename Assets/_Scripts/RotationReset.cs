@@ -6,6 +6,8 @@ public class RotationReset : MonoBehaviour {
 
 	public GameObject arcam;
 
+
+
 	RaycastHit Hit;
 
 	void Start () {

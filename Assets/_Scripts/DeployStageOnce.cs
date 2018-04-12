@@ -22,7 +22,6 @@ public class DeployStageOnce : MonoBehaviour {
 			Debug.Log("AnchorStage must be specified");
 			return;
 		}
-
 		AnchorStage.SetActive(false);
 	}
 
@@ -48,7 +47,6 @@ public class DeployStageOnce : MonoBehaviour {
 				Debug.LogWarning ("Hit test is invalid or AnchorStage not set");
 				return;
 			}
-
 			var anchor = _deviceTracker.CreatePlaneAnchor (Guid.NewGuid ().ToString (), result);
 			if (anchor != null) {
 				placed = true;
@@ -60,11 +58,9 @@ public class DeployStageOnce : MonoBehaviour {
 				mainMenu.SetActive (true);
 				RotateTowardCamera (boy);
 			}
-
 			if (_previousAnchor != null) {
 				Destroy (_previousAnchor);
 			}
-
 			_previousAnchor = anchor;
 		}
 	}

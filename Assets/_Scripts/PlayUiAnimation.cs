@@ -60,18 +60,12 @@ public class PlayUiAnimation : MonoBehaviour {
 						if (Hit.transform.gameObject == Uiobjects.character) {
 							Uicamera.orthographic = false;
 							Uicamera.transform.localRotation = Quaternion.Euler (20, 0, 0);
-							//Instantiate(showoffPartical,,false);
 							Uicamera.transform.DOLocalMove (new Vector3 (Hit.transform.position.x , Hit.transform.position.y+1, Hit.transform.position.z - 1.25f), 1.5f, false).OnComplete(() => {
 								AnimationControlls.instance.Keyword = Uiobjects.animationName;
-
-								//StartCoroutine(StartAnimation());
 								effectSelectionScreen.SetActive(true);
 								effectSelectionCamera.SetActive (true);
 								animationSelectionScreen.SetActive(false);
 							});
-							//AnimationControlls.instance.Keyword = Uiobjects.animationName;
-						
-
 						} else {
 							Uiobjects.character.GetComponent<Animator> ().Play ("Idle");
 						}
@@ -90,7 +84,6 @@ public class PlayUiAnimation : MonoBehaviour {
 		yield return new WaitForSeconds (0.2f);
 		arCamera.SetActive (true);
 		mainMenu.SetActive (false);
-		//animationSelectionScreen.SetActive (false);
 		effectSelectionScreen.SetActive(false);
 		effectSelectionCamera.SetActive (false);
 
