@@ -115,6 +115,10 @@ public class ZoomScript : MonoBehaviour {
 			}
 		}
 
+	}
 
+	public void EndGuestures() 
+	{
+		
 	}
 }

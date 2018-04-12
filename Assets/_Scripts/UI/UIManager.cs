@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour {
 	bool isExpanded;
 
 	public GameObject arCamera;
+	public GameObject bg;
 
 	public List<ListScreens> screens;
 
@@ -57,6 +58,7 @@ public class UIManager : MonoBehaviour {
 	public void ExpandScreen(int buttonnumber,GameObject Target) {
 		SideBtns[buttonnumber].DOScale(new Vector3(6,6,6), 0.5f).SetEase(Ease.Linear).OnComplete(() => {
 			Target.SetActive(true);
+			bg.SetActive(false);
 			arCamera.SetActive(false);
 			InstantShrink();
 		});

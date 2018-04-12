@@ -11,8 +11,11 @@ public class PlayUiAnimation : MonoBehaviour {
 	private GameObject currentCharecter;
 
 	public GameObject animationSelectionScreen;
+	public GameObject effectSelectionScreen;
+	public GameObject effectSelectionCamera;
 	RaycastHit Hit;
 
+	public GameObject showoffPartical;
 	public GameObject arCamera;
 	public GameObject mainMenu;
 
@@ -57,12 +60,18 @@ public class PlayUiAnimation : MonoBehaviour {
 						if (Hit.transform.gameObject == Uiobjects.character) {
 							Uicamera.orthographic = false;
 							Uicamera.transform.localRotation = Quaternion.Euler (20, 0, 0);
+							//Instantiate(showoffPartical,,false);
 							Uicamera.transform.DOLocalMove (new Vector3 (Hit.transform.position.x , Hit.transform.position.y+1, Hit.transform.position.z - 1.25f), 1.5f, false).OnComplete(() => {
-								print("Called");
 								AnimationControlls.instance.Keyword = Uiobjects.animationName;
-								print(Uiobjects.animationName);
-								StartCoroutine(StartAnimation());
+
+								//StartCoroutine(StartAnimation());
+								effectSelectionScreen.SetActive(true);
+								effectSelectionCamera.SetActive (true);
+								animationSelectionScreen.SetActive(false);
 							});
+							//AnimationControlls.instance.Keyword = Uiobjects.animationName;
+						
+
 						} else {
 							Uiobjects.character.GetComponent<Animator> ().Play ("Idle");
 						}
@@ -72,12 +81,18 @@ public class PlayUiAnimation : MonoBehaviour {
 		}
 	}
 
+	public void StartAr() {
+		StartCoroutine (StartAnimation ());
+	}
+
 	IEnumerator StartAnimation() 
 	{
 		yield return new WaitForSeconds (0.2f);
 		arCamera.SetActive (true);
 		mainMenu.SetActive (false);
-		animationSelectionScreen.SetActive (false);
+		//animationSelectionScreen.SetActive (false);
+		effectSelectionScreen.SetActive(false);
+		effectSelectionCamera.SetActive (false);
 
 
 	}
