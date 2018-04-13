@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1730d0b8751ac9e44b6303c6b7703fa7, type: 3}
+  m_Name: you_there
+  m_EditorClassIdentifier: 
+  rootClip: {fileID: 0}
+  m_EnableSequenceCaching: 0
+  m_AssetVersion: 4
+  m_ResourcesDirectory: GAF/Resources/Cache/
+  m_MecanimResourcesDirectory: GAF/You There/you_there_animator/
+  m_AudioResourcesDirectory: GAF/You There/
+  m_AssetData: 4341470005099201000078da63640081067b4628cdc9c009a425d3d2d2fe37b05bb0f032a4436418581890c1071706867617188f9187a1283fbf242433373527332f9583211b662a4833232f43657e697c49466a51aa5e415e3a488209a2b101821d1c20b8c11e86c1fac04a14728e3008b01d6160780054c080a1086c1017830494c902136260869bc0c330172a033115ea2166b86740a67d7041780ee13126640d2c7013614e40368001c95662343438ba303cd8e18c1aac2000000a182883
+  m_GUID: 3b2bb860b25844e8bbcf44a72b7ca8d1
+  m_Path: GAF/You There/
+  m_IsExternalDataCollected: 1
+  m_ExternalData:
+  - m_TimelineID: 0
+    m_ObjectTypeFlags: 0000000000000000
+  m_HasNesting: 0
+  m_KeyFrames: []
+  m_AudioResources: []
+  m_AnimatorControllers:
+  - {fileID: 9100000, guid: 91ac4537a923b46b7a90a37c8f29313c, type: 2}

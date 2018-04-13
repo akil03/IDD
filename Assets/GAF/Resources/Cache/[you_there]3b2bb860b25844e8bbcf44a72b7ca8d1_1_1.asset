@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f0b625614a406468ee087f147489e7, type: 3}
+  m_Name: '[you_there]3b2bb860b25844e8bbcf44a72b7ca8d1_1_1'
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 11400000, guid: 3b2bb860b25844e8bbcf44a72b7ca8d1, type: 2}
+  m_Scale: 1
+  m_CSF: 1
+  m_CurrentDataPath: Assets/GAF/You There/
+  m_Data:
+  - m_SearchName: you_there
+    m_SharedTexture: {fileID: 2800000, guid: 99658793258ab4f75845937f3abbdc8d, type: 3}
+    m_SharedMaterial: {fileID: 2100000, guid: e83207865c60a43daba1d0a2ce71b944, type: 2}

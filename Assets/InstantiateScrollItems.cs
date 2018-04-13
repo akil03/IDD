@@ -11,6 +11,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 	public Transform effectbuttonParent;
 	public Transform logoinitiationParent;
 
+	public Renderer boyBody;
 
 	public GameObject button;
 	public GameObject effectButton;
@@ -22,10 +23,10 @@ public class InstantiateScrollItems : MonoBehaviour {
 
 	public List<ButtonNames> animationNames;
 	public List<EffectsImage> effectImage;
-	// Use this for initialization
+	public List<FaceExpressions> expressions;
+
 	void Start () 
 	{
-		
 			if (effects == false) {
 			foreach (var name in animationNames) {
 				GameObject obj = Instantiate (button, animationbuttinParent, false);
@@ -36,12 +37,13 @@ public class InstantiateScrollItems : MonoBehaviour {
 			{
 			foreach (var effect in effectImage) {
 				GameObject obj = Instantiate(effectButton, effectbuttonParent, false);
+				obj.transform.localScale = Vector3.one;
 				obj.GetComponent<Image>().sprite = effect.icon;
 				obj.GetComponent<ButtonAnimator> ().effect = effect.animationKey;
 				obj.GetComponent<ButtonAnimator> ().effectGaf = effect.effectGaf;
+				obj.GetComponent<ButtonAnimator> ().expTime = effect.expTime;
 			}
 			}
-		
 	}
 
 	void Awake() 
@@ -55,17 +57,28 @@ public class InstantiateScrollItems : MonoBehaviour {
 	}
 
 
-	public void AnimationCalled(string key) 
+	public void AnimationCalled(string key)
 	{
 		animationCharecter.Play (key);
+
 	}
 
-	public void EffectAnimationcalled(string Key, GameObject logo) 
+	public IEnumerator emmotionStart(FaceExpressions Key) {
+		foreach (var obj in Key.expressionTimes) {
+					Material[] mat = boyBody.materials;
+					mat [2] = obj.faceAction;
+					boyBody.materials = mat;
+					yield return new WaitForSeconds (obj.time);
+				}
+	}
+
+	public void EffectAnimationcalled(string Key, GameObject logo, FaceExpressions expTime) 
 	{
 		if (effectinstantiated) {
 			Destroy (effectinstantiated);
 		}
 		animationCharecter.Play(Key);
+		StartCoroutine (emmotionStart (expTime));
 		StartCoroutine (starteffect (animationCharecter.GetCurrentAnimatorClipInfo(0).Length,logo));
 	}
 	public IEnumerator starteffect(float time, GameObject logo)
@@ -88,4 +101,17 @@ public class EffectsImage {
 	public string animationKey;
 	public Sprite icon;
 	public GameObject effectGaf;
+	public FaceExpressions expTime;
+}
+
+[System.Serializable]
+
+public class FaceExpressions {
+	public List<expressionTime> expressionTimes;
+}
+
+[System.Serializable]
+public class expressionTime {
+	public float time;
+	public Material faceAction;
 }

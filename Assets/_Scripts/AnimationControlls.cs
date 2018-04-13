@@ -27,6 +27,9 @@ public class AnimationControlls : MonoBehaviour {
 	public GameObject arCamera;
 	public GameObject mainMenu;
 
+	public FaceExpressions expTime;
+	public Renderer mainBody;
+
 	private GameObject instantiatedImage;
 
 	void OnEnable() 
@@ -68,7 +71,17 @@ public class AnimationControlls : MonoBehaviour {
 			}
 		}
 		audio.Play ();
+
 		StartCoroutine (stopFirstanimation ());
+	}
+
+	public IEnumerator emmotionStart(FaceExpressions Key) {
+		foreach (var obj in Key.expressionTimes) {
+			Material[] mat = mainBody.materials;
+			mat [2] = obj.faceAction;
+			mainBody.materials = mat;
+			yield return new WaitForSeconds (obj.time);
+		}
 	}
 
 	public IEnumerator stopFirstanimation() {
@@ -81,6 +94,7 @@ public class AnimationControlls : MonoBehaviour {
 		print (EndAnimationKey);
 		if (EndAnimationKey != "") {
 			charAnimation.Play (EndAnimationKey);
+			StartCoroutine (emmotionStart(expTime));
 			yield return new WaitForSeconds (1f);
 			instantiatedImage = Instantiate (effectImage, instantiationPoint[UnityEngine.Random.Range(0,instantiationPoint.Length)], false);
 			StartCoroutine (StopANimation(2f));
