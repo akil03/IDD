@@ -56,6 +56,9 @@ public class RecScript : MonoBehaviour {
 			ReplayKit.StartRecording ();
 			isRecordingComplete = false;
 			print ("recording");
+		} else {
+			ReplayKit.StopRecording ();
+			Record ();
 		}
 	}
 

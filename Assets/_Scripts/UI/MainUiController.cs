@@ -8,7 +8,8 @@ public class MainUiController : MonoBehaviour {
 	public static MainUiController instance;
 	public PlaneFinderBehaviour plane;
 	public GameObject groundplane;
-
+	public AudioSource uiCharecterAudio;
+	public Animator uicharecterAnimator;
 	public GameObject[] screens;
 	public GameObject Arcamera;
 
@@ -25,6 +26,8 @@ public class MainUiController : MonoBehaviour {
 	public void AnimationSelectionDone() {
 		screens [1].SetActive (false);
 		screens [2].SetActive (true);
+		uiCharecterAudio.Stop ();
+		uicharecterAnimator.Play ("Idle");
 	}
 
 	public void EffectSelectionDone() {

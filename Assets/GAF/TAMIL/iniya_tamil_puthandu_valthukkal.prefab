@@ -549,7 +549,7 @@ Transform:
   m_GameObject: {fileID: 1534420865999690}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_LocalScale: {x: 0.0035, y: 0.0035, z: 0.0035}
   m_Children:
   - {fileID: 4741513522607538}
   - {fileID: 4082327754925010}
@@ -3272,7 +3272,7 @@ MonoBehaviour:
     m_IgnoreTimeScale: 0
     m_PerfectTiming: 1
     m_PlayInBackground: 1
-    m_WrapMode: 1
+    m_WrapMode: 0
     m_TargetFPS: 24
     m_SpriteLayerID: 0
     m_SpriteLayerName: Default

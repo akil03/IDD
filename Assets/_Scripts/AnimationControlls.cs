@@ -10,6 +10,7 @@ public class AnimationControlls : MonoBehaviour {
 
 	public Animator charAnimation;
 	public AudioSource audio;
+	public AudioClip audioTest;
 	public GameObject effectImage;
 	public List<AudioNames> audioname;
 	public float audiolenght;
@@ -57,21 +58,24 @@ public class AnimationControlls : MonoBehaviour {
 	}
 
 	void On_play() {
+		StopAllCoroutines ();
 		print (Keyword);
 		charAnimation.Play (Keyword);
 		if (instantiatedImage) {
 			Destroy (instantiatedImage);
 		}
 
-		foreach (var data in audioname) {
-			if (data.Audioname == Keyword) {
-				print (data.Audioname);
-				audio.clip = data.audio;
-				audiolenght = data.audio.length;
-			}
-		}
+//		foreach (var data in audioname) {
+//			if (data.Audioname == Keyword) {
+//				print (data.Audioname);
+//				audio.clip = data.audio;
+//				audiolenght = data.audio.length;
+//			}
+//		}
+		audio.clip = audioTest;
+		audiolenght = audioTest.length;
 		audio.Play ();
-
+	
 		StartCoroutine (stopFirstanimation ());
 	}
 
@@ -97,7 +101,7 @@ public class AnimationControlls : MonoBehaviour {
 			StartCoroutine (emmotionStart(expTime));
 			yield return new WaitForSeconds (1f);
 			instantiatedImage = Instantiate (effectImage, instantiationPoint[UnityEngine.Random.Range(0,instantiationPoint.Length)], false);
-			StartCoroutine (StopANimation(2f));
+			StartCoroutine (StopANimation(3f));
 		} else {
 			print ("Skipped");
 			StartCoroutine(StopANimation (2f));

@@ -6,24 +6,20 @@ using UnityEngine.UI;
 public class InstantiateScrollItems : MonoBehaviour {
 
 	public Animator animationCharecter;
-
 	public Transform animationbuttinParent;
 	public Transform effectbuttonParent;
 	public Transform logoinitiationParent;
-
 	public Renderer boyBody;
-
 	public GameObject button;
 	public GameObject effectButton;
 	public string[] buttonNames;
 	public bool effects;
 	public static InstantiateScrollItems instance;
-
 	private GameObject effectinstantiated;
-
 	public List<ButtonNames> animationNames;
 	public List<EffectsImage> effectImage;
 	public List<FaceExpressions> expressions;
+	public AudioSource bodyAudio;
 
 	void Start () 
 	{
@@ -31,6 +27,8 @@ public class InstantiateScrollItems : MonoBehaviour {
 			foreach (var name in animationNames) {
 				GameObject obj = Instantiate (button, animationbuttinParent, false);
 				obj.GetComponentInChildren<Text> ().text = name.buttonName;
+				//bodyAudio.clip = name.audio;
+				obj.GetComponent<ButtonAnimator> ().audios = name.audios;
 				obj.GetComponent<ButtonAnimator> ().DanceMove = name.animationKey;
 			}
 			} else 
@@ -49,7 +47,6 @@ public class InstantiateScrollItems : MonoBehaviour {
 		var theBarRectTransform = transform as RectTransform;
 		if (count > 5) {
 				theBarRectTransform.sizeDelta = new Vector2 (theBarRectTransform.sizeDelta.x, count * 300);
-			
 		}
 	}
 
@@ -64,18 +61,19 @@ public class InstantiateScrollItems : MonoBehaviour {
 	}
 
 
-	public void AnimationCalled(string key)
+	public void AnimationCalled(string key, AudioClip Audio)
 	{
 		StopAllCoroutines ();
 		if (effectinstantiated) {
 			Destroy (effectinstantiated);
 		}
+		bodyAudio.clip = Audio;
+		bodyAudio.Play ();
 		animationCharecter.Play (key);
 
 	}
 
 	public IEnumerator emmotionStart(FaceExpressions Key) {
-		
 		foreach (var obj in Key.expressionTimes) {
 					Material[] mat = boyBody.materials;
 					mat [2] = obj.faceAction;
@@ -107,6 +105,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 public class ButtonNames {
 	public string buttonName;
 	public string animationKey;
+	public AudioClip audios;
 }
 
 [System.Serializable]

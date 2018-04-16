@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Apple.ReplayKit;
+using UnityEngine.Playables;
 using DG.Tweening;
+
 public class UIManager : MonoBehaviour {
 	public RectTransform[] SideBtns;
 	public float sideBtnAnimTime;
@@ -11,8 +14,24 @@ public class UIManager : MonoBehaviour {
 	public List<ListScreens> screens;
 
 	void Start () {
-		
+
+		StartCoroutine (FakeRecord ());
+
+
 	}
+
+	IEnumerator FakeRecord(){
+		ReplayKit.StartRecording ();
+		while (!ReplayKit.isRecording)
+			yield return null;
+		yield return new WaitForSeconds(2);
+		ReplayKit.StopRecording ();
+		while (!ReplayKit.recordingAvailable)
+			yield return null;
+		ReplayKit.Discard ();
+	}
+
+
 
 	void Update () {
 		

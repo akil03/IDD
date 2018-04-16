@@ -8,6 +8,7 @@ public class ButtonAnimator : MonoBehaviour {
 	public string effect;
 	public GameObject effectGaf;
 	public FaceExpressions expTime;
+	public AudioClip audios;
 
 	void Start () {
 		
@@ -18,8 +19,9 @@ public class ButtonAnimator : MonoBehaviour {
 	}
 
 	public void OnClick(){
-		InstantiateScrollItems.instance.AnimationCalled (DanceMove);
+		InstantiateScrollItems.instance.AnimationCalled (DanceMove, audios);
 		AnimationControlls.instance.Keyword = DanceMove;
+		AnimationControlls.instance.audioTest = audios;
 	}
 
 	public void OnEffectClick() {
