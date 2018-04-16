@@ -14,7 +14,7 @@ MonoBehaviour:
   m_Asset: {fileID: 11400000, guid: 01a917da7ffbe43569d42e5b92048554, type: 2}
   m_Scale: 1
   m_CSF: 1
-  m_CurrentDataPath: Assets/GAF/New Folder/
+  m_CurrentDataPath: Assets/GAF/Sorry/
   m_Data:
   - m_SearchName: sorry
     m_SharedTexture: {fileID: 2800000, guid: ebd0f1e9687c7496ebe979f84d280bb8, type: 3}

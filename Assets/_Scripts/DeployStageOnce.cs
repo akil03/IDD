@@ -8,6 +8,8 @@ public class DeployStageOnce : MonoBehaviour {
 	private PositionalDeviceTracker _deviceTracker;
 	private GameObject _previousAnchor;
 
+	public static DeployStageOnce instance;
+
 	public GameObject mainMenu;
 
 
@@ -27,6 +29,7 @@ public class DeployStageOnce : MonoBehaviour {
 
 	public void Awake()
 	{
+		instance = this;
 		VuforiaARController.Instance.RegisterVuforiaStartedCallback(OnVuforiaStarted);
 	}
 
@@ -75,6 +78,9 @@ public class DeployStageOnce : MonoBehaviour {
 
 	public void ResetPressed() 
 	{
+		if (AnimationControlls.instance. instantiatedImage) {
+			Destroy (AnimationControlls.instance. instantiatedImage);
+		}
 		AnchorStage.SetActive (false);
 		mainMenu.SetActive (false);
 		transform.GetComponent<PlaneFinderBehaviour> ().enabled = true;

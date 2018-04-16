@@ -228,8 +228,8 @@ RectTransform:
   m_Father: {fileID: 1809614087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.00000011920929}
+  m_AnchorMax: {x: 1, y: 0.9999999}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3931,9 +3931,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: -17}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &46993010
 MonoBehaviour:
@@ -4877,8 +4877,8 @@ RectTransform:
   m_Father: {fileID: 1798445560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.0251261}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.025126107}
+  m_AnchorMax: {x: 1, y: 0.9999999}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5173,9 +5173,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 37862187}
+  - {fileID: 1160168298}
   - {fileID: 1490711036}
   - {fileID: 552058163}
-  - {fileID: 1160168298}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9860,7 +9860,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14057,7 +14057,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401670, guid: 26715113fcf1d455f8f84eae83365e55, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 401670, guid: 26715113fcf1d455f8f84eae83365e55, type: 3}
       propertyPath: m_LocalScale.x
@@ -23711,23 +23711,31 @@ MonoBehaviour:
   effectImage: {fileID: 0}
   audioname:
   - Audioname: Wave
-    audio: {fileID: 8300000, guid: 3ab10b373bef641108c85b4597b420d4, type: 3}
+    audio: {fileID: 8300000, guid: c7c7b41e7b87c416a89cb97c0ef276ce, type: 3}
   - Audioname: Salt
-    audio: {fileID: 8300000, guid: 5b6bfbd4c50dc421dbf389ef15f7f318, type: 3}
+    audio: {fileID: 8300000, guid: 733cb2ad6e59942a6a9f9ca944251616, type: 3}
   - Audioname: Worm
-    audio: {fileID: 8300000, guid: 6dd51ace8916a4d3284bf97b1ca5c60f, type: 3}
+    audio: {fileID: 8300000, guid: 9e214d4fa606044da9ac0cde596691b1, type: 3}
   - Audioname: Robot
-    audio: {fileID: 8300000, guid: eff7da3920496482e8b43e9b51453973, type: 3}
+    audio: {fileID: 8300000, guid: 37867a4ecf2b4411eacc804bc3f1620f, type: 3}
   - Audioname: Electro
-    audio: {fileID: 8300000, guid: 6fe98165fa7d543859e3078f504ab14d, type: 3}
+    audio: {fileID: 8300000, guid: 5471d5558452f46ec8b6fe3104cdd849, type: 3}
   - Audioname: Clap
-    audio: {fileID: 8300000, guid: 4ea2c9f16df344d9fa6b79b097ab3073, type: 3}
+    audio: {fileID: 8300000, guid: 33b0bd628642c4d0fb2a9abea00563a3, type: 3}
   - Audioname: TakeL
-    audio: {fileID: 8300000, guid: 5263d87fd193f4e7eae29c3520bd7218, type: 3}
+    audio: {fileID: 8300000, guid: 5378d68f4145a4c6e9682339e94e3767, type: 3}
   - Audioname: Fioss
-    audio: {fileID: 8300000, guid: 31d751172ec854df6972665da9c5c624, type: 3}
+    audio: {fileID: 8300000, guid: 88cf44d50c0784665ad83a95177b2170, type: 3}
   - Audioname: Dab
-    audio: {fileID: 8300000, guid: 3bfecfcacff484f14b0b8218d970e82c, type: 3}
+    audio: {fileID: 8300000, guid: 9d59a975adc634a3ab1dc631008e93d3, type: 3}
+  - Audioname: Pony
+    audio: {fileID: 8300000, guid: 9a14d470fb195465dad080539bf77a0f, type: 3}
+  - Audioname: Match
+    audio: {fileID: 8300000, guid: 6ef164fd509ab429ab9244fa64c51fdc, type: 3}
+  - Audioname: Gun
+    audio: {fileID: 8300000, guid: 77687a16c09484a9da39f7779ee7a8ec, type: 3}
+  - Audioname: Flapper
+    audio: {fileID: 8300000, guid: 33cf36e9fd81f4a209e86ff4a38c4354, type: 3}
   audiolenght: 0
   Keyword: 
   audioKey: 
@@ -23748,6 +23756,7 @@ MonoBehaviour:
   expTime:
     expressionTimes: []
   mainBody: {fileID: 1825005758}
+  instantiatedImage: {fileID: 0}
 --- !u!4 &961647263
 Transform:
   m_ObjectHideFlags: 0
@@ -23795,6 +23804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plane: {fileID: 1588035967}
+  groundplane: {fileID: 0}
   screens:
   - {fileID: 523460011}
   - {fileID: 205463686}
@@ -24738,7 +24748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517436, y: 0.00000020185848}
+  m_AnchoredPosition: {x: 0.000030517436, y: 0.00015616082}
   m_SizeDelta: {x: 0, y: 1090.5}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1067339954
@@ -24829,6 +24839,16 @@ MonoBehaviour:
     animationKey: Floss
   - buttonName: Clap
     animationKey: Clap
+  - buttonName: Gun Show
+    animationKey: Gun
+  - buttonName: Flapper
+    animationKey: Flapper
+  - buttonName: Ride the Pony
+    animationKey: Pony
+  - buttonName: Best Match
+    animationKey: Match
+  - buttonName: The Worm
+    animationKey: Worm
   effectImage:
   - animationKey: HELLO
     icon: {fileID: 21300000, guid: 521a8da8e89b2438588d9c15ca118677, type: 3}
@@ -25467,7 +25487,7 @@ Transform:
   - {fileID: 1469558001}
   - {fileID: 1563464287}
   m_Father: {fileID: 212960462}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1160168299
 MonoBehaviour:
@@ -30058,7 +30078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1319963486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33740,9 +33760,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -17, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1359772646
 MonoBehaviour:
@@ -34570,7 +34590,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401670, guid: 3d350eec66c4a450f937e91c00981393, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 401670, guid: 3d350eec66c4a450f937e91c00981393, type: 3}
       propertyPath: m_LocalScale.x
@@ -35302,8 +35322,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 181863722}
   m_HandleRect: {fileID: 181863721}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9748739
+  m_Value: 0.9999955
+  m_Size: 0.9748738
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -35445,9 +35465,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1524380670
 MonoBehaviour:
@@ -35487,8 +35507,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 13160171}
   m_HandleRect: {fileID: 13160170}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -35983,7 +36003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnchorStage: {fileID: 212960460}
   mainMenu: {fileID: 855781467}
-  boy: {fileID: 1160168295}
+  boy: {fileID: 1490711035}
   placed: 0
 --- !u!1 &1588656513
 GameObject:
@@ -37697,7 +37717,6 @@ GameObject:
   - component: {fileID: 1786049003}
   - component: {fileID: 1786049004}
   - component: {fileID: 1786049006}
-  - component: {fileID: 1786049007}
   - component: {fileID: 1786049005}
   m_Layer: 5
   m_Name: Content
@@ -37721,7 +37740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517436, y: -0.000013037135}
+  m_AnchoredPosition: {x: 0, y: -0.0002113496}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1786049004
@@ -37730,7 +37749,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1786049002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb8b5e203d9eb4975b33f4c366a30be7, type: 3}
   m_Name: 
@@ -37745,11 +37764,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786049002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 1
-  m_VerticalFit: 1
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 300, y: 300}
+  m_Spacing: {x: 0, y: 20}
+  m_Constraint: 1
+  m_ConstraintCount: 1
 --- !u!114 &1786049006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37800,20 +37829,30 @@ MonoBehaviour:
     animationKey: Electro
   effectImage:
   - animationKey: Hello
-    icon: {fileID: 21300000, guid: c88dfce0b8be84226b9f3bd55d1c4368, type: 3}
+    icon: {fileID: 21300000, guid: bbefc3c07555047289b2a851a0230b10, type: 3}
     effectGaf: {fileID: 1424774357643606, guid: ed464fdd7f8ac43dfbadc7857b96bfe6,
       type: 2}
     expTime:
-      expressionTimes: []
+      expressionTimes:
+      - time: 1
+        faceAction: {fileID: 2100000, guid: d2e004a8498a3430e8dd204e4ffed43e, type: 2}
+      - time: 2
+        faceAction: {fileID: 2100000, guid: 82dfaa6270efa4c8c8588970ffb367c9, type: 2}
   - animationKey: High Five
-    icon: {fileID: 21300000, guid: e91bcb4b306b441b8b011da56518ecd3, type: 3}
-    effectGaf: {fileID: 1232582178657464, guid: 8aafc37ab9b024d9385bf189c519a23d,
+    icon: {fileID: 21300000, guid: 6933e7428792046d5bb8fecaddbec69e, type: 3}
+    effectGaf: {fileID: 1345408085240070, guid: 3b18fe3453a0147a4b45f471b4ab4a64,
       type: 2}
     expTime:
-      expressionTimes: []
+      expressionTimes:
+      - time: 2.08
+        faceAction: {fileID: 2100000, guid: d2e004a8498a3430e8dd204e4ffed43e, type: 2}
+      - time: 1.5
+        faceAction: {fileID: 2100000, guid: 82dfaa6270efa4c8c8588970ffb367c9, type: 2}
+      - time: 2
+        faceAction: {fileID: 2100000, guid: 4d08a8a1e34574d98aaa7d05b2d846bc, type: 2}
   - animationKey: Lol
-    icon: {fileID: 21300000, guid: e91bcb4b306b441b8b011da56518ecd3, type: 3}
-    effectGaf: {fileID: 1232582178657464, guid: 8aafc37ab9b024d9385bf189c519a23d,
+    icon: {fileID: 21300000, guid: b7f8b738ce77c4a9d820878fb5d0c264, type: 3}
+    effectGaf: {fileID: 1800708921983388, guid: fd226cd39561a4b36aa31c29d0f9c09b,
       type: 2}
     expTime:
       expressionTimes:
@@ -37824,17 +37863,69 @@ MonoBehaviour:
       - time: 0.17
         faceAction: {fileID: 2100000, guid: 3e3cd03809e9a44a4871147ebade1dc6, type: 2}
   - animationKey: There
-    icon: {fileID: 21300000, guid: e7d71ca11c6b04bf29e53d3912dd0be9, type: 3}
-    effectGaf: {fileID: 1917233291274248, guid: 6dcd5289aa02e4c9eb41fe99e631433a,
+    icon: {fileID: 21300000, guid: b67bec98c31ff4e50a1803eb692aa756, type: 3}
+    effectGaf: {fileID: 1560037121693724, guid: 1187e5e01f7204163863ae847aa64ddc,
       type: 2}
     expTime:
-      expressionTimes: []
+      expressionTimes:
+      - time: 1
+        faceAction: {fileID: 2100000, guid: 92307f848a956427ab44c1ba62c1cb9f, type: 2}
+      - time: 0.04
+        faceAction: {fileID: 2100000, guid: 14f077faa9e584b9aa97ecaccdf1e0b8, type: 2}
+      - time: 1.1
+        faceAction: {fileID: 2100000, guid: 92307f848a956427ab44c1ba62c1cb9f, type: 2}
+      - time: 1.6
+        faceAction: {fileID: 2100000, guid: d2e004a8498a3430e8dd204e4ffed43e, type: 2}
   - animationKey: Thanks
-    icon: {fileID: 21300000, guid: e7d71ca11c6b04bf29e53d3912dd0be9, type: 3}
+    icon: {fileID: 21300000, guid: cd9c181f0a50b4f6189e3282e834b354, type: 3}
     effectGaf: {fileID: 1202265692111074, guid: 17dd4ecce59a24738a7501da2c3c82f0,
       type: 2}
     expTime:
-      expressionTimes: []
+      expressionTimes:
+      - time: 1.06
+        faceAction: {fileID: 2100000, guid: 82dfaa6270efa4c8c8588970ffb367c9, type: 2}
+      - time: 1.75
+        faceAction: {fileID: 2100000, guid: 14f077faa9e584b9aa97ecaccdf1e0b8, type: 2}
+      - time: 1
+        faceAction: {fileID: 2100000, guid: d2e004a8498a3430e8dd204e4ffed43e, type: 2}
+  - animationKey: GoodLuck
+    icon: {fileID: 21300000, guid: 3fbff14bfef764d229450f2a2852024b, type: 3}
+    effectGaf: {fileID: 1785661953914728, guid: f569eb1dcd4e546f2a57b4bf58018494,
+      type: 2}
+    expTime:
+      expressionTimes:
+      - time: 0.7
+        faceAction: {fileID: 2100000, guid: d2e004a8498a3430e8dd204e4ffed43e, type: 2}
+      - time: 0.1
+        faceAction: {fileID: 2100000, guid: 14f077faa9e584b9aa97ecaccdf1e0b8, type: 2}
+      - time: 0.1
+        faceAction: {fileID: 2100000, guid: d2e004a8498a3430e8dd204e4ffed43e, type: 2}
+      - time: 0.1
+        faceAction: {fileID: 2100000, guid: 3e3cd03809e9a44a4871147ebade1dc6, type: 2}
+  - animationKey: Sorry
+    icon: {fileID: 21300000, guid: 6cd65de5dc8624bc2bb9dbffdfac9de3, type: 3}
+    effectGaf: {fileID: 1518481441019188, guid: a7884a34144a841ee88be85c2487df16,
+      type: 2}
+    expTime:
+      expressionTimes:
+      - time: 0.1
+        faceAction: {fileID: 2100000, guid: 92307f848a956427ab44c1ba62c1cb9f, type: 2}
+  - animationKey: Tamil
+    icon: {fileID: 21300000, guid: 2509e8268a58e4446bf29e60c5072fa8, type: 3}
+    effectGaf: {fileID: 1534420865999690, guid: ed92d37eab86d43769fbac763ec36ce7,
+      type: 2}
+    expTime:
+      expressionTimes:
+      - time: 0.8
+        faceAction: {fileID: 2100000, guid: d2e004a8498a3430e8dd204e4ffed43e, type: 2}
+      - time: 0.2
+        faceAction: {fileID: 2100000, guid: 14f077faa9e584b9aa97ecaccdf1e0b8, type: 2}
+      - time: 1.5
+        faceAction: {fileID: 2100000, guid: d2e004a8498a3430e8dd204e4ffed43e, type: 2}
+      - time: 0.3
+        faceAction: {fileID: 2100000, guid: 14f077faa9e584b9aa97ecaccdf1e0b8, type: 2}
+      - time: 38
+        faceAction: {fileID: 2100000, guid: 82dfaa6270efa4c8c8588970ffb367c9, type: 2}
   expressions:
   - expressionTimes:
     - time: 0.13
@@ -37843,28 +37934,6 @@ MonoBehaviour:
       faceAction: {fileID: 2100000, guid: 4d08a8a1e34574d98aaa7d05b2d846bc, type: 2}
     - time: 0.17
       faceAction: {fileID: 2100000, guid: 3e3cd03809e9a44a4871147ebade1dc6, type: 2}
---- !u!114 &1786049007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1786049002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 150
-    m_Right: 150
-    m_Top: 100
-    m_Bottom: 100
-  m_ChildAlignment: 4
-  m_Spacing: 20
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
 --- !u!1 &1789169822
 GameObject:
   m_ObjectHideFlags: 0
@@ -39159,7 +39228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2013975388
 RectTransform:
   m_ObjectHideFlags: 0

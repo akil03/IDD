@@ -43,7 +43,14 @@ public class InstantiateScrollItems : MonoBehaviour {
 				obj.GetComponent<ButtonAnimator> ().effectGaf = effect.effectGaf;
 				obj.GetComponent<ButtonAnimator> ().expTime = effect.expTime;
 			}
+
 			}
+		int count = transform.childCount;
+		var theBarRectTransform = transform as RectTransform;
+		if (count > 5) {
+				theBarRectTransform.sizeDelta = new Vector2 (theBarRectTransform.sizeDelta.x, count * 300);
+			
+		}
 	}
 
 	void Awake() 
@@ -59,11 +66,16 @@ public class InstantiateScrollItems : MonoBehaviour {
 
 	public void AnimationCalled(string key)
 	{
+		StopAllCoroutines ();
+		if (effectinstantiated) {
+			Destroy (effectinstantiated);
+		}
 		animationCharecter.Play (key);
 
 	}
 
 	public IEnumerator emmotionStart(FaceExpressions Key) {
+		
 		foreach (var obj in Key.expressionTimes) {
 					Material[] mat = boyBody.materials;
 					mat [2] = obj.faceAction;
@@ -74,6 +86,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 
 	public void EffectAnimationcalled(string Key, GameObject logo, FaceExpressions expTime) 
 	{
+		StopAllCoroutines ();
 		if (effectinstantiated) {
 			Destroy (effectinstantiated);
 		}

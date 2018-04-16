@@ -220,8 +220,8 @@ ModelImporter:
     - serializedVersion: 16
       name: clip2
       takeName: Take 001
-      firstFrame: 42
-      lastFrame: 90
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

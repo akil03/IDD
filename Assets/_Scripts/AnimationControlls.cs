@@ -30,7 +30,7 @@ public class AnimationControlls : MonoBehaviour {
 	public FaceExpressions expTime;
 	public Renderer mainBody;
 
-	private GameObject instantiatedImage;
+	public GameObject instantiatedImage;
 
 	void OnEnable() 
 	{

@@ -7,6 +7,7 @@ public class MainUiController : MonoBehaviour {
 
 	public static MainUiController instance;
 	public PlaneFinderBehaviour plane;
+	public GameObject groundplane;
 
 	public GameObject[] screens;
 	public GameObject Arcamera;
@@ -32,7 +33,9 @@ public class MainUiController : MonoBehaviour {
 	}
 
 	public void HomeScreenPressed() {
-		plane.enabled = false;
+		groundplane.SetActive (false);
+		DeployStageOnce.instance.placed = false;
+		plane.enabled = true;
 		screens [1].SetActive (true);
 	}
 
