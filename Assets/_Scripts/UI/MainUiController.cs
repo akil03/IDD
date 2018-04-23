@@ -50,6 +50,8 @@ public class MainUiController : MonoBehaviour {
 	}
 
 	public void EditProfileSelected() {
+		InstantiateScrollItems.instance.bodyAudio.Stop ();
+		InstantiateScrollItems.instance.animationCharecter.Play ("Idle");
 		screens [1].SetActive (false);
 		screens [0].SetActive (true);
 	}

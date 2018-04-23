@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.iOS;
@@ -60,11 +61,9 @@ public class RecScript : MonoBehaviour {
 	}
 
 	public void RecordWithMicroPhone() {
-		ReplayKit.microphoneEnabled = true;
-		if (!ReplayKit.isRecording && ReplayKit.microphoneEnabled == true) {
+		if (!ReplayKit.isRecording) {
 			RecordPlayer ();
-			ReplayKit.StartRecording ();
-
+			ReplayKit.StartRecording (true);
 			isRecordingComplete = false;
 		} else {
 			ReplayKit.StopRecording ();
@@ -75,7 +74,6 @@ public class RecScript : MonoBehaviour {
 	public void RecordWithoutMicrophone() {
 		if (!ReplayKit.isRecording) {
 			RecordPlayer ();
-			ReplayKit.microphoneEnabled = false;
 			ReplayKit.StartRecording ();
 			isRecordingComplete = false;
 		} else {

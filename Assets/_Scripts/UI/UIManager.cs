@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour {
 	}
 
 	IEnumerator FakeRecord(){
-		ReplayKit.StartRecording ();
+		ReplayKit.StartRecording (true);
 		while (!ReplayKit.isRecording)
 			yield return null;
 		yield return new WaitForSeconds(2);

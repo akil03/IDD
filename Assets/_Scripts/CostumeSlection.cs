@@ -16,11 +16,7 @@ public class CostumeSlection : MonoBehaviour {
 	void Start () {
 		foreach (var obj in stylebodyparts) {
 			Material[] mat = obj.body.materials;
-			//mat [0] = transparentMaterial;
-			print (mat [0].shader.name);
-			mat[0] = new Material(Shader.Find("Transparent/VertexLit with Z"));
-
-			mat [0].color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+			mat[0] = Resources.Load("Test") as Material;
 			obj.body.materials = mat;
 		}
 
@@ -51,13 +47,10 @@ public class CostumeSlection : MonoBehaviour {
 				objects.Index = objects.Index + 1 != objects.fullConstume.Count ? objects.Index + 1 : 0; 
 				objects.fullConstume [objects.Index].SetActive (true);
 				Material[] mat = objects.body.materials;
-				mat[0] = new Material(Shader.Find("Transparent/VertexLit with Z"));
-				mat [0].color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				mat [1] = objects.bodyMaterial[objects.Index];
 				mat [2] = objects.faceexpression [objects.Index];
 				objects.body.materials = mat;
 				AnimationControlls.instance.charecterSelectionIndex = objects.Index;
-				//InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
 			}
 		}
 	}
@@ -77,20 +70,16 @@ public class CostumeSlection : MonoBehaviour {
 //			styles.Dress [clothIndex].SetActive (true);
 //			maincharecter.Dress [clothIndex].SetActive (true);
 		} else if(fullConstume == true) {
-
 			foreach (var objects in stylebodyparts) 
 			{
 				objects.fullConstume [objects.Index].SetActive (false);
 				objects.Index = objects.Index -1> -1 ? objects.Index - 1 : objects.fullConstume.Count -1; 
 				objects.fullConstume [objects.Index].SetActive (true);
 				Material[] mat = objects.body.materials;
-				mat[0] = new Material(Shader.Find("Transparent/VertexLit with Z"));
-				mat [0].color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				mat [1] = objects.bodyMaterial[objects.Index];
 				mat [2] = objects.faceexpression [objects.Index];
 				objects.body.materials = mat;
 				AnimationControlls.instance.charecterSelectionIndex = objects.Index;
-				//InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
 			}
 
 		}
