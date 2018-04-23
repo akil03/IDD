@@ -13,17 +13,24 @@ public class MainUiController : MonoBehaviour {
 	public GameObject[] screens;
 	public GameObject Arcamera;
 
+	public bool effectsinstantiated =  false;
 
 	void Awake() {
 		instance = this;
 	}
 
 	public void CharecterSelectionDone(){
+		InstantiateScrollItems.instance.effects = false;
 		screens [0].SetActive (false);
 		screens [1].SetActive (true);
 	}
 
 	public void AnimationSelectionDone() {
+		InstantiateScrollItems.instance.effects = true;
+		if (!effectsinstantiated) {
+			InstantiateScrollItems.instance.InstantiateCalled ();
+			effectsinstantiated = true;
+		}
 		screens [1].SetActive (false);
 		screens [2].SetActive (true);
 		uiCharecterAudio.Stop ();
@@ -48,7 +55,10 @@ public class MainUiController : MonoBehaviour {
 	}
 
 	public void ChangeAnimation() {
+		
+		InstantiateScrollItems.instance.effects = false;
 		screens [2].SetActive (false);
 		screens [1].SetActive (true);
+
 	}
 }

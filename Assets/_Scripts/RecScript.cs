@@ -12,7 +12,6 @@ public class RecScript : MonoBehaviour {
 	public Animation animationClip;
 	public GameObject[] Codown;
 	public static RecScript instance;
-
 	public delegate void RecordPressed();
 	public static event RecordPressed RecordPlayer;
 	public Animator charAnimator;
@@ -45,7 +44,6 @@ public class RecScript : MonoBehaviour {
 	public void On_DoubleTap(Gesture gesture) 
 	{
 		AnimationControlls.instance.StopAllCoroutines ();
-		print ("Doubletap");
 		StopRecord ();
 
 	}
@@ -55,7 +53,31 @@ public class RecScript : MonoBehaviour {
 			RecordPlayer ();
 			ReplayKit.StartRecording ();
 			isRecordingComplete = false;
-			print ("recording");
+		} else {
+			ReplayKit.StopRecording ();
+			Record ();
+		}
+	}
+
+	public void RecordWithMicroPhone() {
+		ReplayKit.microphoneEnabled = true;
+		if (!ReplayKit.isRecording && ReplayKit.microphoneEnabled == true) {
+			RecordPlayer ();
+			ReplayKit.StartRecording ();
+
+			isRecordingComplete = false;
+		} else {
+			ReplayKit.StopRecording ();
+			Record ();
+		}
+	}
+
+	public void RecordWithoutMicrophone() {
+		if (!ReplayKit.isRecording) {
+			RecordPlayer ();
+			ReplayKit.microphoneEnabled = false;
+			ReplayKit.StartRecording ();
+			isRecordingComplete = false;
 		} else {
 			ReplayKit.StopRecording ();
 			Record ();
@@ -63,7 +85,6 @@ public class RecScript : MonoBehaviour {
 	}
 
 	public void StopRecord(){
-		print ("Stopcalled");
 		if (ReplayKit.isRecording){
 			charAnimator.Play ("Idle");
 			charAudio.Stop ();
@@ -73,6 +94,8 @@ public class RecScript : MonoBehaviour {
 		}
 	}
 
+
+
 	IEnumerator ShowRecording(){
 		
 		isRecordingComplete = true;
@@ -81,8 +104,6 @@ public class RecScript : MonoBehaviour {
 		{
 			yield return null;
 		}
-		//yield return new WaitForEndOfFrame ();
-	//	print ("rePLAY END");
 		ReplayKit.Preview ();
 	}
 

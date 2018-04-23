@@ -32,6 +32,7 @@ public class AnimationControlls : MonoBehaviour {
 	public Renderer mainBody;
 
 	public GameObject instantiatedImage;
+	public int charecterSelectionIndex;
 
 	void OnEnable() 
 	{
@@ -59,30 +60,21 @@ public class AnimationControlls : MonoBehaviour {
 
 	void On_play() {
 		StopAllCoroutines ();
-		print (Keyword);
 		charAnimation.Play (Keyword);
 		if (instantiatedImage) {
 			Destroy (instantiatedImage);
 		}
-
-//		foreach (var data in audioname) {
-//			if (data.Audioname == Keyword) {
-//				print (data.Audioname);
-//				audio.clip = data.audio;
-//				audiolenght = data.audio.length;
-//			}
-//		}
 		audio.clip = audioTest;
 		audiolenght = audioTest.length;
 		audio.Play ();
-	
+
 		StartCoroutine (stopFirstanimation ());
 	}
 
 	public IEnumerator emmotionStart(FaceExpressions Key) {
 		foreach (var obj in Key.expressionTimes) {
 			Material[] mat = mainBody.materials;
-			mat [2] = obj.faceAction;
+			mat [2] = obj.faceAction[charecterSelectionIndex];
 			mainBody.materials = mat;
 			yield return new WaitForSeconds (obj.time);
 		}

@@ -4248,7 +4248,7 @@ MonoBehaviour:
     m_DecomposeFlashTransform: 0
     m_UseLights: 0
     m_CacheStates: 0
-  m_CurrentFrameNumber: 0
+  m_CurrentFrameNumber: 2147483647
   m_InternalFrameNumber: 1
   m_IsActive: 1
   m_FramesAudioData: []

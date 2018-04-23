@@ -19,9 +19,10 @@ public class ButtonAnimator : MonoBehaviour {
 	}
 
 	public void OnClick(){
-		InstantiateScrollItems.instance.AnimationCalled (DanceMove, audios);
+		InstantiateScrollItems.instance.AnimationCalled (DanceMove, audios, expTime);
 		AnimationControlls.instance.Keyword = DanceMove;
 		AnimationControlls.instance.audioTest = audios;
+		AnimationControlls.instance.expTime = expTime;
 	}
 
 	public void OnEffectClick() {

@@ -11,8 +11,19 @@ public class CostumeSlection : MonoBehaviour {
 
 	public PlaneFinderBehaviour planefinder;
 	public List<CharecterStyle> stylebodyparts;
+	public Material transparentMaterial;
 
 	void Start () {
+		foreach (var obj in stylebodyparts) {
+			Material[] mat = obj.body.materials;
+			//mat [0] = transparentMaterial;
+			print (mat [0].shader.name);
+			mat[0] = new Material(Shader.Find("Transparent/VertexLit with Z"));
+
+			mat [0].color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+			obj.body.materials = mat;
+		}
+
 	}
 
 	public void Select() {
@@ -39,9 +50,15 @@ public class CostumeSlection : MonoBehaviour {
 				objects.fullConstume [objects.Index].SetActive (false);
 				objects.Index = objects.Index + 1 != objects.fullConstume.Count ? objects.Index + 1 : 0; 
 				objects.fullConstume [objects.Index].SetActive (true);
-				objects.body.material = objects.bodyMaterial [objects.Index];
+				Material[] mat = objects.body.materials;
+				mat[0] = new Material(Shader.Find("Transparent/VertexLit with Z"));
+				mat [0].color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+				mat [1] = objects.bodyMaterial[objects.Index];
+				mat [2] = objects.faceexpression [objects.Index];
+				objects.body.materials = mat;
+				AnimationControlls.instance.charecterSelectionIndex = objects.Index;
+				//InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
 			}
-
 		}
 	}
 
@@ -66,7 +83,14 @@ public class CostumeSlection : MonoBehaviour {
 				objects.fullConstume [objects.Index].SetActive (false);
 				objects.Index = objects.Index -1> -1 ? objects.Index - 1 : objects.fullConstume.Count -1; 
 				objects.fullConstume [objects.Index].SetActive (true);
-				objects.body.material = objects.bodyMaterial [objects.Index];
+				Material[] mat = objects.body.materials;
+				mat[0] = new Material(Shader.Find("Transparent/VertexLit with Z"));
+				mat [0].color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+				mat [1] = objects.bodyMaterial[objects.Index];
+				mat [2] = objects.faceexpression [objects.Index];
+				objects.body.materials = mat;
+				AnimationControlls.instance.charecterSelectionIndex = objects.Index;
+				//InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
 			}
 
 		}
@@ -81,6 +105,7 @@ public class CharecterStyle
 	public List<GameObject> hair;
 	public List<GameObject> fullConstume;
 	public List<Material> bodyMaterial;
+	public List<Material> faceexpression;
 	public Renderer body;
 	public int Index = 0;
 }
