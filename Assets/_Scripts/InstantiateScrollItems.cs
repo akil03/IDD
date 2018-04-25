@@ -30,8 +30,11 @@ public class InstantiateScrollItems : MonoBehaviour {
 	public void InstantiateCalled() {
 		if (effects == false) {
 			foreach (var name in animationNames) {
-				GameObject obj = Instantiate (button, animationbuttinParent, false);
-				obj.GetComponentInChildren<Text> ().text = name.buttonName;
+				GameObject obj = Instantiate(button, animationbuttinParent, false);
+				obj.transform.localScale = Vector3.one;
+				print (name.icon [charecterSelectionindex]);
+				obj.GetComponent<Image>().sprite = name.icon[charecterSelectionindex];
+
 				obj.GetComponent<ButtonAnimator> ().audios = name.audios;
 				obj.GetComponent<ButtonAnimator> ().DanceMove = name.animationKey;
 				obj.GetComponent<ButtonAnimator> ().expTime = name.expTime;
@@ -55,13 +58,20 @@ public class InstantiateScrollItems : MonoBehaviour {
 		}
 	}
 
+	public void DestroyObjects() {
+		foreach (Transform obj in animationbuttinParent) {
+			Destroy (obj.gameObject);
+		}
+	}
+
 	void Awake() 
 	{
 		instance = this;
+
 	}
 
 	void Update() {
-		charecterSelectionindex = AnimationControlls.instance.charecterSelectionIndex;
+		//charecterSelectionindex = AnimationControlls.instance.charecterSelectionIndex;
 
 	}
 
@@ -119,7 +129,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 
 [System.Serializable]
 public class ButtonNames {
-	public string buttonName;
+	public Sprite[] icon;
 	public string animationKey;
 	public AudioClip audios;
 	public FaceExpressions expTime;

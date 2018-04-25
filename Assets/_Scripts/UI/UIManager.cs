@@ -14,10 +14,7 @@ public class UIManager : MonoBehaviour {
 	public List<ListScreens> screens;
 
 	void Start () {
-
 		StartCoroutine (FakeRecord ());
-
-
 	}
 
 	IEnumerator FakeRecord(){
@@ -31,8 +28,6 @@ public class UIManager : MonoBehaviour {
 		ReplayKit.Discard ();
 	}
 
-
-
 	void Update () {
 		
 	}
@@ -44,7 +39,6 @@ public class UIManager : MonoBehaviour {
 			StartCoroutine(ExpandSide ());
 	}
 
-
 	IEnumerator ExpandSide(){
 		isExpanded = true;
 		for (int i = 0; i < SideBtns.Length; i++) {
@@ -52,7 +46,6 @@ public class UIManager : MonoBehaviour {
 			yield return new WaitForSeconds (sideBtnAnimTime/2);
 		}
 	}
-
 
 	IEnumerator ShrinkSide(){
 		isExpanded = false;
@@ -85,10 +78,9 @@ public class UIManager : MonoBehaviour {
 		isExpanded = false;
 		for (int i = SideBtns.Length; i > 0; i--) {
 			SideBtns[i-1].DOScale (Vector3.zero,0).SetEase (Ease.Linear);
-		}
-	}
-		
-}
+	     	}
+    	}
+   }
 
 [System.Serializable]
 

@@ -11,8 +11,7 @@ public class ScaleWidth : MonoBehaviour {
 	void Start () {
 
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		int count = transform.childCount;
 		var theBarRectTransform = transform as RectTransform;

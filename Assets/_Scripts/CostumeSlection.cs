@@ -43,6 +43,7 @@ public class CostumeSlection : MonoBehaviour {
 		} else if(fullConstume == true) {
 			foreach (var objects in stylebodyparts) 
 			{
+				
 				objects.fullConstume [objects.Index].SetActive (false);
 				objects.Index = objects.Index + 1 != objects.fullConstume.Count ? objects.Index + 1 : 0; 
 				objects.fullConstume [objects.Index].SetActive (true);
@@ -51,6 +52,9 @@ public class CostumeSlection : MonoBehaviour {
 				mat [2] = objects.faceexpression [objects.Index];
 				objects.body.materials = mat;
 				AnimationControlls.instance.charecterSelectionIndex = objects.Index;
+				InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
+				InstantiateScrollItems.instance.DestroyObjects ();
+				InstantiateScrollItems.instance.InstantiateCalled ();
 			}
 		}
 	}
@@ -72,6 +76,7 @@ public class CostumeSlection : MonoBehaviour {
 		} else if(fullConstume == true) {
 			foreach (var objects in stylebodyparts) 
 			{
+				
 				objects.fullConstume [objects.Index].SetActive (false);
 				objects.Index = objects.Index -1> -1 ? objects.Index - 1 : objects.fullConstume.Count -1; 
 				objects.fullConstume [objects.Index].SetActive (true);
@@ -80,6 +85,10 @@ public class CostumeSlection : MonoBehaviour {
 				mat [2] = objects.faceexpression [objects.Index];
 				objects.body.materials = mat;
 				AnimationControlls.instance.charecterSelectionIndex = objects.Index;
+				InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
+				InstantiateScrollItems.instance.DestroyObjects ();
+				InstantiateScrollItems.instance.InstantiateCalled ();
+
 			}
 
 		}
