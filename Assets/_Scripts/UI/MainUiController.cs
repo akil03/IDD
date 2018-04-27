@@ -57,7 +57,10 @@ public class MainUiController : MonoBehaviour {
 	}
 
 	public void ChangeAnimation() {
-		
+		StartCoroutine (InstantiateScrollItems.instance.StopAnimation (0.1f));
+
+		//InstantiateScrollItems.instance.StartCoroutine(StopAnimation(0.1f));
+		Destroy (InstantiateScrollItems.instance.effectinstantiated);
 		InstantiateScrollItems.instance.effects = false;
 		screens [2].SetActive (false);
 		screens [1].SetActive (true);

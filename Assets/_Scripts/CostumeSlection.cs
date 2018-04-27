@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
+using DG.Tweening;
 
 public class CostumeSlection : MonoBehaviour {
 	
 	public bool hairSelected;
 	public bool clothSelected;
 	public bool fullConstume;
+
+	public Transform CharecterStage;
 
 	public PlaneFinderBehaviour planefinder;
 	public List<CharecterStyle> stylebodyparts;
@@ -41,21 +44,26 @@ public class CostumeSlection : MonoBehaviour {
 //			styles.Dress [clothIndex].SetActive (true);
 //			maincharecter.Dress [clothIndex].SetActive (true);
 		} else if(fullConstume == true) {
-			foreach (var objects in stylebodyparts) 
-			{
-				
-				objects.fullConstume [objects.Index].SetActive (false);
-				objects.Index = objects.Index + 1 != objects.fullConstume.Count ? objects.Index + 1 : 0; 
-				objects.fullConstume [objects.Index].SetActive (true);
-				Material[] mat = objects.body.materials;
-				mat [1] = objects.bodyMaterial[objects.Index];
-				mat [2] = objects.faceexpression [objects.Index];
-				objects.body.materials = mat;
-				AnimationControlls.instance.charecterSelectionIndex = objects.Index;
-				InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
-				InstantiateScrollItems.instance.DestroyObjects ();
-				InstantiateScrollItems.instance.InstantiateCalled ();
-			}
+			CharecterStage.DOLocalMoveY (-5, 0.5f, false).SetEase (Ease.Linear).OnComplete (() => {
+				foreach (var objects in stylebodyparts) 
+				{
+					objects.fullConstume [objects.Index].SetActive (false);
+					objects.Index = objects.Index + 1 != objects.fullConstume.Count ? objects.Index + 1 : 0; 
+					objects.fullConstume [objects.Index].SetActive (true);
+					Material[] mat = objects.body.materials;
+					mat [1] = objects.bodyMaterial[objects.Index];
+					mat [2] = objects.faceexpression [objects.Index];
+					objects.body.materials = mat;
+					AnimationControlls.instance.charecterSelectionIndex = objects.Index;
+					InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
+					InstantiateScrollItems.instance.DestroyObjects ();
+					InstantiateScrollItems.instance.InstantiateCalled ();
+					CharecterStage.DOLocalMoveY (-0.7f, 0.25f, false).SetEase (Ease.Linear);
+				}
+
+			});
+
+
 		}
 	}
 
@@ -74,23 +82,23 @@ public class CostumeSlection : MonoBehaviour {
 //			styles.Dress [clothIndex].SetActive (true);
 //			maincharecter.Dress [clothIndex].SetActive (true);
 		} else if(fullConstume == true) {
-			foreach (var objects in stylebodyparts) 
-			{
+			CharecterStage.DOLocalMoveY (-5, 0.5f, false).SetEase (Ease.Linear).OnComplete (() => {
+				foreach (var objects in stylebodyparts) {
 				
-				objects.fullConstume [objects.Index].SetActive (false);
-				objects.Index = objects.Index -1> -1 ? objects.Index - 1 : objects.fullConstume.Count -1; 
-				objects.fullConstume [objects.Index].SetActive (true);
-				Material[] mat = objects.body.materials;
-				mat [1] = objects.bodyMaterial[objects.Index];
-				mat [2] = objects.faceexpression [objects.Index];
-				objects.body.materials = mat;
-				AnimationControlls.instance.charecterSelectionIndex = objects.Index;
-				InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
-				InstantiateScrollItems.instance.DestroyObjects ();
-				InstantiateScrollItems.instance.InstantiateCalled ();
-
-			}
-
+					objects.fullConstume [objects.Index].SetActive (false);
+					objects.Index = objects.Index - 1 > -1 ? objects.Index - 1 : objects.fullConstume.Count - 1; 
+					objects.fullConstume [objects.Index].SetActive (true);
+					Material[] mat = objects.body.materials;
+					mat [1] = objects.bodyMaterial [objects.Index];
+					mat [2] = objects.faceexpression [objects.Index];
+					objects.body.materials = mat;
+					AnimationControlls.instance.charecterSelectionIndex = objects.Index;
+					InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
+					InstantiateScrollItems.instance.DestroyObjects ();
+					InstantiateScrollItems.instance.InstantiateCalled ();
+					CharecterStage.DOLocalMoveY (-0.7f, 0.25f, false).SetEase (Ease.Linear);
+				}
+			});
 		}
 	}
 		

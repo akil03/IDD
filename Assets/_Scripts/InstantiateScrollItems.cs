@@ -2,23 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+
 
 public class InstantiateScrollItems : MonoBehaviour {
 
 	public Animator animationCharecter;
 	public Transform animationbuttinParent;
 	public Transform effectbuttonParent;
+	public Transform AnimationListView;
+	public GameObject bgImahe;
+	public GameObject[] smallcharImagesBg;
 	public Transform logoinitiationParent;
+	public Transform titlebuttonParent;
+	public Camera renderTextureCamera;
 	public Renderer boyBody;
 	public GameObject button;
 	public GameObject effectButton;
+	public GameObject headingButton;
+	public GameObject renderTexturePrefab;
 	public string[] buttonNames;
 	public bool effects;
 	public static InstantiateScrollItems instance;
-	private GameObject effectinstantiated;
+	public GameObject effectinstantiated;
 	public List<ButtonNames> animationNames;
 	public List<EffectsImage> effectImage;
+	public List<AnimationTitle> animationTitle;
 	public AudioSource bodyAudio;
+	public Ease easeType;
+	public Animator renderTexturemodalAnimator;
+	public GameObject SelectOption;
 
 	public int charecterSelectionindex;
 
@@ -27,17 +40,62 @@ public class InstantiateScrollItems : MonoBehaviour {
 		InstantiateCalled ();
 	}
 
+	public void AnimateList(List<ButtonNames> animationName, Color color, Color bg, Color smallimage) {
+		bodyAudio.Stop ();
+		StartCoroutine(StopAnimation(0.1f));
+		StartCoroutine (InstantiateAnimationList (animationName, color));
+		bgImahe.GetComponent<Image> ().color = bg;
+		foreach(GameObject image in smallcharImagesBg) {
+			image.GetComponent<Image> ().color = smallimage;
+		}
+	}
+
+	public IEnumerator InstantiateAnimationList(List<ButtonNames> animationName, Color color) {
+		foreach (Transform obj in animationbuttinParent) {
+			Destroy (obj.gameObject);
+		}
+		AnimationListView.DOLocalMoveX (200, 0.25f, false).SetEase (Ease.Linear).OnComplete (() => {
+			AnimationListView.GetComponent<Image>().color = color;
+			AnimationListView.DOLocalMoveX (-150, 0.25f, false).SetEase (Ease.Linear);
+		}
+		);
+					
+		foreach (var name in animationName) {
+			yield return new WaitForSeconds (0.5f);
+			GameObject obj = Instantiate (renderTexturePrefab, animationbuttinParent, false);
+			obj.transform.DOScale (Vector3.one, 0.5f).SetEase(easeType);
+			//obj.transform.localScale = Vector3.one;
+			//obj.GetComponent<Image> ().sprite = name.icon [charecterSelectionindex];
+			renderTexturemodalAnimator.Play(name.renderTextureAnimationKey);
+			RenderTexture rt = new RenderTexture(256, 256, 16, RenderTextureFormat.ARGB32);
+			rt.Create();
+			renderTextureCamera.targetTexture = rt;
+			obj.GetComponentInChildren<ButtonAnimator> ().RenderImage = rt;
+			GameObject circ = obj.transform.GetChild(0).gameObject;
+			circ.GetComponent<Image> ().color = name.bgColor;
+			obj.GetComponentInChildren<RawImage> ().texture = rt;
+			obj.transform.GetChild (1).GetComponent<Image> ().sprite = name.hutBG;
+			obj.transform.GetChild (3).GetComponent<Image> ().color = name.iconTextBgColor;
+			obj.transform.GetChild (4).GetComponent<Text> ().text = name.IconText;
+			obj.transform.GetChild (4).GetComponent<Text> ().font = name.IconTextfontFont;
+			obj.transform.GetChild (4).GetComponent<Text> ().color = name.iconTextColor;
+			obj.GetComponentInChildren<ButtonAnimator> ().audios = name.audios;
+			obj.GetComponentInChildren<ButtonAnimator> ().DanceMove = name.animationKey;
+			obj.GetComponentInChildren<ButtonAnimator> ().expTime = name.expTime;
+		}
+	}
+
 	public void InstantiateCalled() {
 		if (effects == false) {
-			foreach (var name in animationNames) {
-				GameObject obj = Instantiate(button, animationbuttinParent, false);
+			foreach(var objs in animationTitle) {
+				GameObject obj = Instantiate(headingButton, titlebuttonParent, false);
 				obj.transform.localScale = Vector3.one;
-				print (name.icon [charecterSelectionindex]);
-				obj.GetComponent<Image>().sprite = name.icon[charecterSelectionindex];
-
-				obj.GetComponent<ButtonAnimator> ().audios = name.audios;
-				obj.GetComponent<ButtonAnimator> ().DanceMove = name.animationKey;
-				obj.GetComponent<ButtonAnimator> ().expTime = name.expTime;
+				obj.GetComponent<Image> ().sprite = objs.Icon;
+				obj.GetComponent<TitleButtonController> ().bgColor = objs.bgColorCode;
+				obj.GetComponent<TitleButtonController> ().smallIconsBgColor = objs.smallImagesColor;
+				obj.GetComponent<TitleButtonController> ().animationNames = objs.Animations;
+				obj.GetComponent<TitleButtonController> ().TitleParent = titlebuttonParent;
+				obj.GetComponent<TitleButtonController> ().color = objs.colorCode;
 			}
 		} else 
 		{
@@ -59,7 +117,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 	}
 
 	public void DestroyObjects() {
-		foreach (Transform obj in animationbuttinParent) {
+		foreach (Transform obj in titlebuttonParent) {
 			Destroy (obj.gameObject);
 		}
 	}
@@ -83,7 +141,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 
 	public void AnimationCalled(string key, AudioClip Audio, FaceExpressions Test)
 	{
-		StopAllCoroutines ();
+		SelectOption.SetActive (true);
 		if (effectinstantiated) {
 			Destroy (effectinstantiated);
 		}
@@ -102,10 +160,10 @@ public class InstantiateScrollItems : MonoBehaviour {
 
 	public IEnumerator emmotionStart(FaceExpressions Key) {
 		foreach (var obj in Key.expressionTimes) {
+					yield return new WaitForSeconds (obj.time);
 					Material[] mat = boyBody.materials;
 					mat [2] = obj.faceAction[charecterSelectionindex];
 					boyBody.materials = mat;
-					yield return new WaitForSeconds (obj.time);
 				}
 	}
 
@@ -130,8 +188,15 @@ public class InstantiateScrollItems : MonoBehaviour {
 [System.Serializable]
 public class ButtonNames {
 	public Sprite[] icon;
+	public string renderTextureAnimationKey;
 	public string animationKey;
 	public AudioClip audios;
+	public Sprite hutBG;
+	public string IconText;
+	public Font IconTextfontFont;
+	public Color bgColor;
+	public Color iconTextBgColor;
+	public Color iconTextColor;
 	public FaceExpressions expTime;
 }
 
@@ -153,4 +218,13 @@ public class FaceExpressions {
 public class expressionTime {
 	public float time;
 	public List<Material> faceAction;
+}
+
+[System.Serializable]
+public class AnimationTitle {
+	public Sprite Icon;
+	public Color colorCode;
+	public Color bgColorCode;
+	public Color smallImagesColor;
+	public List<ButtonNames> Animations;
 }

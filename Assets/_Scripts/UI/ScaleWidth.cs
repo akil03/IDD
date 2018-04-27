@@ -15,7 +15,7 @@ public class ScaleWidth : MonoBehaviour {
 	void Update () {
 		int count = transform.childCount;
 		var theBarRectTransform = transform as RectTransform;
-		if (count > 5) {
+		if (count > 2) {
 			if (direction == "Column" || direction == "column") {
 				theBarRectTransform.sizeDelta = new Vector2 (theBarRectTransform.sizeDelta.x, count * multiplerCount);
 			} else if (direction == "Row" || direction == "row") {

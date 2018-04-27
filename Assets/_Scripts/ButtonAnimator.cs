@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ButtonAnimator : MonoBehaviour {
 	public string DanceMove;
@@ -9,6 +10,8 @@ public class ButtonAnimator : MonoBehaviour {
 	public GameObject effectGaf;
 	public FaceExpressions expTime;
 	public AudioClip audios;
+	public RenderTexture RenderImage;
+	public Ease easeType;
 
 	void Start () {
 		
