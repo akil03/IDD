@@ -99,6 +99,7 @@ MonoBehaviour:
   expTime:
     expressionTimes: []
   audios: {fileID: 0}
+  RenderImage: {fileID: 0}
   easeType: 0
 --- !u!114 &114652010886314438
 MonoBehaviour:
@@ -149,5 +150,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

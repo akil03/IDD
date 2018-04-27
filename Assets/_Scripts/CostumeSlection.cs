@@ -16,6 +16,8 @@ public class CostumeSlection : MonoBehaviour {
 	public List<CharecterStyle> stylebodyparts;
 	public Material transparentMaterial;
 
+	public Ease stageease;
+
 	void Start () {
 		foreach (var obj in stylebodyparts) {
 			Material[] mat = obj.body.materials;
@@ -44,7 +46,7 @@ public class CostumeSlection : MonoBehaviour {
 //			styles.Dress [clothIndex].SetActive (true);
 //			maincharecter.Dress [clothIndex].SetActive (true);
 		} else if(fullConstume == true) {
-			CharecterStage.DOLocalMoveY (-5, 0.5f, false).SetEase (Ease.Linear).OnComplete (() => {
+			CharecterStage.DOLocalMoveY (-5, 0.5f, false).SetEase (stageease).OnComplete (() => {
 				foreach (var objects in stylebodyparts) 
 				{
 					objects.fullConstume [objects.Index].SetActive (false);
@@ -58,7 +60,7 @@ public class CostumeSlection : MonoBehaviour {
 					InstantiateScrollItems.instance.charecterSelectionindex = objects.Index;
 					InstantiateScrollItems.instance.DestroyObjects ();
 					InstantiateScrollItems.instance.InstantiateCalled ();
-					CharecterStage.DOLocalMoveY (-0.7f, 0.25f, false).SetEase (Ease.Linear);
+					CharecterStage.DOLocalMoveY (-0.7f, 0.5f, false).SetEase (stageease);
 				}
 
 			});

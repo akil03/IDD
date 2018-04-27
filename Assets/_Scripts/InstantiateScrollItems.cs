@@ -33,6 +33,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 	public Animator renderTexturemodalAnimator;
 	public GameObject SelectOption;
 
+
 	public int charecterSelectionindex;
 
 	void Start () 
@@ -187,7 +188,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 
 [System.Serializable]
 public class ButtonNames {
-	public Sprite[] icon;
+	//public Sprite[] icon;
 	public string renderTextureAnimationKey;
 	public string animationKey;
 	public AudioClip audios;

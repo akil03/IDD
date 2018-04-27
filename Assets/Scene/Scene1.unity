@@ -269,7 +269,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -491,9 +491,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: -17}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &46993010
 MonoBehaviour:
@@ -569,7 +569,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1319963486}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1723,6 +1723,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 300934956}
+--- !u!1 &308606274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 308606275}
+  - component: {fileID: 308606277}
+  - component: {fileID: 308606276}
+  m_Layer: 5
+  m_Name: Image (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &308606275
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 308606274}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1319963486}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &308606276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 308606274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 1b62046a4d97441a0bd78674e6a34ed6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &308606277
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 308606274}
 --- !u!1 &323851426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2108,72 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 370903938}
+--- !u!1001 &374666459
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 886308807}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.249
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 133.33334
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 133.33342
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_Name
+      value: stage (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1001 &376403654
 Prefab:
   m_ObjectHideFlags: 0
@@ -2170,7 +2304,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401670, guid: 26715113fcf1d455f8f84eae83365e55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.96
+      value: 2.051
       objectReference: {fileID: 0}
     - target: {fileID: 401670, guid: 26715113fcf1d455f8f84eae83365e55, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2496,7 +2630,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9b351aac170b3409b846c0fa9620099e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e99cdedfd6fc14243b83580d2e445c86, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2541,7 +2675,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2930,7 +3064,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1319963486}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3053,7 +3187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &523460012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3702,7 +3836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &795575358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4029,7 +4163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8b5e203d9eb4975b33f4c366a30be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplerCount: 300
+  multiplerCount: 50
   direction: Column
 --- !u!114 &856208670
 MonoBehaviour:
@@ -4050,7 +4184,7 @@ MonoBehaviour:
   m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 256, y: 256}
+  m_CellSize: {x: 300, y: 100}
   m_Spacing: {x: 0, y: 20}
   m_Constraint: 1
   m_ConstraintCount: 1
@@ -4390,7 +4524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4969,11 +5103,7 @@ MonoBehaviour:
   effects: 0
   effectinstantiated: {fileID: 0}
   animationNames:
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: TakeL
     audios: {fileID: 8300000, guid: 5378d68f4145a4c6e9682339e94e3767, type: 3}
     hutBG: {fileID: 0}
@@ -4984,11 +5114,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Salt
     audios: {fileID: 8300000, guid: 733cb2ad6e59942a6a9f9ca944251616, type: 3}
     hutBG: {fileID: 0}
@@ -4999,11 +5125,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 21300000, guid: 8302ba9dd74e84d569ba1e23aeb6b164, type: 3}
-    - {fileID: 21300000, guid: 1c325f509a44b4267b1eb36c4bc167b3, type: 3}
-    - {fileID: 21300000, guid: 182a6cd36abbf41bf91c599fe99c8fd4, type: 3}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Match
     audios: {fileID: 8300000, guid: c322933a05c07469c9ea1c5fd8185edd, type: 3}
     hutBG: {fileID: 0}
@@ -5014,11 +5136,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Robot
     audios: {fileID: 8300000, guid: 37867a4ecf2b4411eacc804bc3f1620f, type: 3}
     hutBG: {fileID: 0}
@@ -5029,11 +5147,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Wave
     audios: {fileID: 8300000, guid: c7c7b41e7b87c416a89cb97c0ef276ce, type: 3}
     hutBG: {fileID: 0}
@@ -5044,11 +5158,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 21300000, guid: d24b5bac22865465daaefec001215980, type: 3}
-    - {fileID: 21300000, guid: 0e0f87e3c5336477aad85162e4bb4f13, type: 3}
-    - {fileID: 21300000, guid: 92827b84cecfb4e9e82b078e365485a0, type: 3}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Electro
     audios: {fileID: 8300000, guid: 818962715cee447c8a3c9851c520f214, type: 3}
     hutBG: {fileID: 0}
@@ -5059,11 +5169,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Dab
     audios: {fileID: 8300000, guid: 9d59a975adc634a3ab1dc631008e93d3, type: 3}
     hutBG: {fileID: 0}
@@ -5074,11 +5180,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Floss
     audios: {fileID: 8300000, guid: 88cf44d50c0784665ad83a95177b2170, type: 3}
     hutBG: {fileID: 0}
@@ -5089,11 +5191,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Clap
     audios: {fileID: 8300000, guid: 33b0bd628642c4d0fb2a9abea00563a3, type: 3}
     hutBG: {fileID: 0}
@@ -5104,11 +5202,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Gun
     audios: {fileID: 8300000, guid: a2f9e450178884b48b697f92a4efb8c5, type: 3}
     hutBG: {fileID: 0}
@@ -5119,11 +5213,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Pony
     audios: {fileID: 8300000, guid: 9a14d470fb195465dad080539bf77a0f, type: 3}
     hutBG: {fileID: 0}
@@ -5134,11 +5224,7 @@ MonoBehaviour:
     iconTextColor: {r: 0, g: 0, b: 0, a: 0}
     expTime:
       expressionTimes: []
-  - icon:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    renderTextureAnimationKey: 
+  - renderTextureAnimationKey: 
     animationKey: Flapper
     audios: {fileID: 8300000, guid: 5779bc807ade44939b38f59cce6f0842, type: 3}
     hutBG: {fileID: 0}
@@ -5354,20 +5440,16 @@ MonoBehaviour:
         - {fileID: 2100000, guid: a4c1460db179646038b42426762d8b60, type: 2}
         - {fileID: 2100000, guid: 30204021bd17b42039591ac321028c0f, type: 2}
   animationTitle:
-  - Icon: {fileID: 21300000, guid: 420a4ae99bddf472393a73329aaf182f, type: 3}
+  - Icon: {fileID: 21300000, guid: 5d95167a6a074497b8e784b05040127f, type: 3}
     colorCode: {r: 0.6, g: 0.7294118, b: 0.59607846, a: 0.766}
     bgColorCode: {r: 0.6, g: 0.7294118, b: 0.59607846, a: 1}
     smallImagesColor: {r: 1, g: 1, b: 1, a: 1}
     Animations:
-    - icon:
-      - {fileID: 21300000, guid: 8302ba9dd74e84d569ba1e23aeb6b164, type: 3}
-      - {fileID: 21300000, guid: 1c325f509a44b4267b1eb36c4bc167b3, type: 3}
-      - {fileID: 21300000, guid: 182a6cd36abbf41bf91c599fe99c8fd4, type: 3}
-      renderTextureAnimationKey: Idle
-      animationKey: Clap
-      audios: {fileID: 8300000, guid: c322933a05c07469c9ea1c5fd8185edd, type: 3}
+    - renderTextureAnimationKey: RobotLogo
+      animationKey: Robot
+      audios: {fileID: 8300000, guid: 37867a4ecf2b4411eacc804bc3f1620f, type: 3}
       hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
-      IconText: Hello
+      IconText: Robot
       IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
         type: 3}
       bgColor: {r: 0.9529412, g: 0.5254902, b: 0.1882353, a: 1}
@@ -5375,15 +5457,11 @@ MonoBehaviour:
       iconTextColor: {r: 1, g: 1, b: 1, a: 1}
       expTime:
         expressionTimes: []
-    - icon:
-      - {fileID: 21300000, guid: 8302ba9dd74e84d569ba1e23aeb6b164, type: 3}
-      - {fileID: 21300000, guid: 1c325f509a44b4267b1eb36c4bc167b3, type: 3}
-      - {fileID: 21300000, guid: 182a6cd36abbf41bf91c599fe99c8fd4, type: 3}
-      renderTextureAnimationKey: Idle
-      animationKey: Clap
-      audios: {fileID: 8300000, guid: c322933a05c07469c9ea1c5fd8185edd, type: 3}
+    - renderTextureAnimationKey: TakeLLogo
+      animationKey: TakeL
+      audios: {fileID: 8300000, guid: 5378d68f4145a4c6e9682339e94e3767, type: 3}
       hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
-      IconText: HI
+      IconText: Take the L
       IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
         type: 3}
       bgColor: {r: 0.6, g: 0.7294118, b: 0.59607846, a: 1}
@@ -5391,15 +5469,11 @@ MonoBehaviour:
       iconTextColor: {r: 1, g: 1, b: 1, a: 1}
       expTime:
         expressionTimes: []
-    - icon:
-      - {fileID: 21300000, guid: 8302ba9dd74e84d569ba1e23aeb6b164, type: 3}
-      - {fileID: 21300000, guid: 1c325f509a44b4267b1eb36c4bc167b3, type: 3}
-      - {fileID: 21300000, guid: 182a6cd36abbf41bf91c599fe99c8fd4, type: 3}
-      renderTextureAnimationKey: Idle
-      animationKey: Clap
-      audios: {fileID: 8300000, guid: c322933a05c07469c9ea1c5fd8185edd, type: 3}
+    - renderTextureAnimationKey: WaveLogo
+      animationKey: Wave
+      audios: {fileID: 8300000, guid: c7c7b41e7b87c416a89cb97c0ef276ce, type: 3}
       hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
-      IconText: Lunch
+      IconText: Wave
       IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
         type: 3}
       bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
@@ -5407,54 +5481,170 @@ MonoBehaviour:
       iconTextColor: {r: 1, g: 1, b: 1, a: 1}
       expTime:
         expressionTimes: []
-  - Icon: {fileID: 21300000, guid: 0e0f87e3c5336477aad85162e4bb4f13, type: 3}
-    colorCode: {r: 0.9764706, g: 0.7372549, b: 0.02745098, a: 1}
+    - renderTextureAnimationKey: SaltLogo
+      animationKey: Salt
+      audios: {fileID: 8300000, guid: 733cb2ad6e59942a6a9f9ca944251616, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Salt Bae
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+    - renderTextureAnimationKey: ClapLogo
+      animationKey: Clap
+      audios: {fileID: 8300000, guid: 33b0bd628642c4d0fb2a9abea00563a3, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Slow Clap
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+    - renderTextureAnimationKey: ElectroLogo
+      animationKey: Electro
+      audios: {fileID: 8300000, guid: 818962715cee447c8a3c9851c520f214, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Electro Shuffle
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+    - renderTextureAnimationKey: FlossLogo
+      animationKey: Floss
+      audios: {fileID: 8300000, guid: 88cf44d50c0784665ad83a95177b2170, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Floss
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+    - renderTextureAnimationKey: DabLogo
+      animationKey: Dab
+      audios: {fileID: 8300000, guid: 9d59a975adc634a3ab1dc631008e93d3, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Dab
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+    - renderTextureAnimationKey: MatchLogo
+      animationKey: Match
+      audios: {fileID: 8300000, guid: c322933a05c07469c9ea1c5fd8185edd, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Best Mates
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+    - renderTextureAnimationKey: FlapperLogo
+      animationKey: Flapper
+      audios: {fileID: 8300000, guid: 68e49250fddd74428b929aac5d5029ad, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Flapper
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+    - renderTextureAnimationKey: GunLogo
+      animationKey: Gun
+      audios: {fileID: 8300000, guid: a2f9e450178884b48b697f92a4efb8c5, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Gun Show
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+    - renderTextureAnimationKey: PonyLogo
+      animationKey: Pony
+      audios: {fileID: 8300000, guid: 9a14d470fb195465dad080539bf77a0f, type: 3}
+      hutBG: {fileID: 21300000, guid: 53348ca175f914513a7116f4bce7d070, type: 3}
+      IconText: Ride The Pony
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+  - Icon: {fileID: 21300000, guid: f54274023dc9c4c32b051c2de51de1b8, type: 3}
+    colorCode: {r: 0.9764706, g: 0.7372549, b: 0.02745098, a: 0.741}
     bgColorCode: {r: 0.26666668, g: 0.34901962, b: 0.38431373, a: 1}
     smallImagesColor: {r: 0.9882353, g: 0.8117647, b: 0.6627451, a: 1}
     Animations:
-    - icon:
-      - {fileID: 21300000, guid: 0e0f87e3c5336477aad85162e4bb4f13, type: 3}
-      - {fileID: 21300000, guid: d24b5bac22865465daaefec001215980, type: 3}
-      - {fileID: 21300000, guid: 92827b84cecfb4e9e82b078e365485a0, type: 3}
-      renderTextureAnimationKey: Idle
-      animationKey: Match
-      audios: {fileID: 8300000, guid: c322933a05c07469c9ea1c5fd8185edd, type: 3}
+    - renderTextureAnimationKey: Khalibali1Logo
+      animationKey: Khalibali1
+      audios: {fileID: 8300000, guid: 42aa49fc712bc4d01b2aa4a9aa85b051, type: 3}
       hutBG: {fileID: 21300000, guid: e2f95c9c0bbec46e7be6d3f7079fa592, type: 3}
-      IconText: 
-      IconTextfontFont: {fileID: 0}
-      bgColor: {r: 0, g: 0, b: 0, a: 1}
-      iconTextBgColor: {r: 0, g: 0, b: 0, a: 0}
-      iconTextColor: {r: 0, g: 0, b: 0, a: 0}
+      IconText: Khalibali1
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
       expTime:
         expressionTimes: []
-    - icon:
-      - {fileID: 21300000, guid: 0e0f87e3c5336477aad85162e4bb4f13, type: 3}
-      - {fileID: 21300000, guid: d24b5bac22865465daaefec001215980, type: 3}
-      - {fileID: 21300000, guid: 92827b84cecfb4e9e82b078e365485a0, type: 3}
-      renderTextureAnimationKey: Dab
-      animationKey: Match
-      audios: {fileID: 8300000, guid: c322933a05c07469c9ea1c5fd8185edd, type: 3}
+    - renderTextureAnimationKey: Khalibali2Logo
+      animationKey: Khalibali2
+      audios: {fileID: 8300000, guid: 42aa49fc712bc4d01b2aa4a9aa85b051, type: 3}
       hutBG: {fileID: 21300000, guid: e2f95c9c0bbec46e7be6d3f7079fa592, type: 3}
-      IconText: 
-      IconTextfontFont: {fileID: 0}
-      bgColor: {r: 0, g: 0, b: 0, a: 1}
-      iconTextBgColor: {r: 0, g: 0, b: 0, a: 0}
-      iconTextColor: {r: 0, g: 0, b: 0, a: 0}
+      IconText: Khalibali2
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
       expTime:
         expressionTimes: []
-    - icon:
-      - {fileID: 21300000, guid: 0e0f87e3c5336477aad85162e4bb4f13, type: 3}
-      - {fileID: 21300000, guid: d24b5bac22865465daaefec001215980, type: 3}
-      - {fileID: 21300000, guid: 92827b84cecfb4e9e82b078e365485a0, type: 3}
-      renderTextureAnimationKey: Pony
-      animationKey: Match
-      audios: {fileID: 8300000, guid: c322933a05c07469c9ea1c5fd8185edd, type: 3}
+    - renderTextureAnimationKey: Khalibali3Logo
+      animationKey: Khalibali3
+      audios: {fileID: 8300000, guid: 42aa49fc712bc4d01b2aa4a9aa85b051, type: 3}
       hutBG: {fileID: 21300000, guid: e2f95c9c0bbec46e7be6d3f7079fa592, type: 3}
-      IconText: 
-      IconTextfontFont: {fileID: 0}
+      IconText: Khalibali3
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
+      bgColor: {r: 0.95294124, g: 0.5254902, b: 0.18823531, a: 1}
+      iconTextBgColor: {r: 0.97647065, g: 0.4156863, b: 0, a: 1}
+      iconTextColor: {r: 1, g: 1, b: 1, a: 1}
+      expTime:
+        expressionTimes: []
+  - Icon: {fileID: 21300000, guid: 037af537965c2491fa4b123b6bebdac7, type: 3}
+    colorCode: {r: 0.42647058, g: 0.2802768, b: 0.018814871, a: 0.678}
+    bgColorCode: {r: 0.71323526, g: 0.5289225, b: 0.19928634, a: 1}
+    smallImagesColor: {r: 0.1397059, g: 0.10461853, b: 0.07498919, a: 0.878}
+    Animations:
+    - renderTextureAnimationKey: SugarLogo
+      animationKey: Sugar
+      audios: {fileID: 8300000, guid: 191b0fc956b5640e7b4f4bb7b099209e, type: 3}
+      hutBG: {fileID: 21300000, guid: e2f95c9c0bbec46e7be6d3f7079fa592, type: 3}
+      IconText: Johney
+      IconTextfontFont: {fileID: 12800000, guid: 9589781b79dcd458ab7dc9c13ccb5b3d,
+        type: 3}
       bgColor: {r: 0, g: 0, b: 0, a: 1}
-      iconTextBgColor: {r: 0, g: 0, b: 0, a: 0}
-      iconTextColor: {r: 0, g: 0, b: 0, a: 0}
+      iconTextBgColor: {r: 0.20588237, g: 0.15938136, b: 0.0075692, a: 1}
+      iconTextColor: {r: 0.23745677, g: 0.48108816, b: 0.5294118, a: 1}
       expTime:
         expressionTimes: []
   bodyAudio: {fileID: 1463219010}
@@ -6081,7 +6271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1110220447
 Transform:
   m_ObjectHideFlags: 0
@@ -6773,6 +6963,68 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1268301614}
+--- !u!1001 &1278599917
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 198244444}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.169
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.145
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9999294
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.011881004
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.3610001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -179.99998
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3f88c0ac2f910464fb08e7be4f309ad1, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &1286066072
 GameObject:
   m_ObjectHideFlags: 0
@@ -6871,6 +7123,7 @@ MonoBehaviour:
     body: {fileID: 2009664069}
     Index: 0
   transparentMaterial: {fileID: 2100000, guid: 4a0791b1a0f5043d481ff767d316e7d3, type: 2}
+  stageease: 30
 --- !u!4 &1286066074
 Transform:
   m_ObjectHideFlags: 0
@@ -6878,7 +7131,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1286066072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10000, y: 384, z: 0}
+  m_LocalPosition: {x: 1000, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2055141007}
@@ -6973,7 +7226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1319963486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6984,6 +7237,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 308606275}
   - {fileID: 1915881631}
   - {fileID: 495751769}
   - {fileID: 1884486480}
@@ -7016,7 +7270,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1b62046a4d97441a0bd78674e6a34ed6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5110f30ebac224375846c29e3bd23550, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7257,9 +7511,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -17, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1359772646
 MonoBehaviour:
@@ -8031,7 +8285,7 @@ RectTransform:
   m_Children:
   - {fileID: 1708203082}
   m_Father: {fileID: 1319963486}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8614,9 +8868,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1524380670
 MonoBehaviour:
@@ -10122,7 +10376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8b5e203d9eb4975b33f4c366a30be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplerCount: 100
+  multiplerCount: 75
   direction: row
 --- !u!114 &1786049005
 MonoBehaviour:
@@ -10792,7 +11046,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1319963486}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -10980,7 +11234,7 @@ RectTransform:
   m_LocalScale: {x: 1.2565029, y: 1.2565026, z: 1.2565026}
   m_Children: []
   m_Father: {fileID: 1319963486}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10999,7 +11253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.809}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
