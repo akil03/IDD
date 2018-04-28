@@ -23,7 +23,7 @@ public class Test : MonoBehaviour
 	}
 
 	IEnumerator Start() {
-		ClearCacheExample ();
+		//ClearCacheExample ();
 		if (downloaded == 0){
 			using ( www = WWW.LoadFromCacheOrDownload (url, 0)) {
 				yield return www;
