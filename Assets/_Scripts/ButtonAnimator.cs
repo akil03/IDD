@@ -12,6 +12,7 @@ public class ButtonAnimator : MonoBehaviour {
 	public AudioClip audios;
 	public RenderTexture RenderImage;
 	public Ease easeType;
+	public List<FallObjectsIming> fallingObjects;
 
 	void Start () {
 		
@@ -25,7 +26,9 @@ public class ButtonAnimator : MonoBehaviour {
 		InstantiateScrollItems.instance.AnimationCalled (DanceMove, audios, expTime);
 		AnimationControlls.instance.Keyword = DanceMove;
 		AnimationControlls.instance.audioTest = audios;
+		AnimationControlls.instance.fallingObjects = fallingObjects;
 		AnimationControlls.instance.expTime = expTime;
+		AnimationControlls.instance.fallingObjects = fallingObjects;
 	}
 
 	public void OnEffectClick() {

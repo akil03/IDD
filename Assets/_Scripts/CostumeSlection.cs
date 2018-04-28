@@ -84,9 +84,8 @@ public class CostumeSlection : MonoBehaviour {
 //			styles.Dress [clothIndex].SetActive (true);
 //			maincharecter.Dress [clothIndex].SetActive (true);
 		} else if(fullConstume == true) {
-			CharecterStage.DOLocalMoveY (-5, 0.5f, false).SetEase (Ease.Linear).OnComplete (() => {
+			CharecterStage.DOLocalMoveY (-5, 0.5f, false).SetEase (stageease).OnComplete (() => {
 				foreach (var objects in stylebodyparts) {
-				
 					objects.fullConstume [objects.Index].SetActive (false);
 					objects.Index = objects.Index - 1 > -1 ? objects.Index - 1 : objects.fullConstume.Count - 1; 
 					objects.fullConstume [objects.Index].SetActive (true);

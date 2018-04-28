@@ -43,10 +43,19 @@ public class MainUiController : MonoBehaviour {
 	}
 
 	public void HomeScreenPressed() {
+		if (InstantiateScrollItems.instance.effectinstantiated) {
+			Destroy (InstantiateScrollItems.instance.effectinstantiated);
+		}
+
 		groundplane.SetActive (false);
 		DeployStageOnce.instance.placed = false;
 		plane.enabled = true;
 		screens [1].SetActive (true);
+	}
+
+	public void SkipPressed() {
+		screens [2].SetActive (false);
+		plane.enabled = true;
 	}
 
 	public void EditProfileSelected() {
@@ -58,8 +67,6 @@ public class MainUiController : MonoBehaviour {
 
 	public void ChangeAnimation() {
 		StartCoroutine (InstantiateScrollItems.instance.StopAnimation (0.1f));
-
-		//InstantiateScrollItems.instance.StartCoroutine(StopAnimation(0.1f));
 		Destroy (InstantiateScrollItems.instance.effectinstantiated);
 		InstantiateScrollItems.instance.effects = false;
 		screens [2].SetActive (false);

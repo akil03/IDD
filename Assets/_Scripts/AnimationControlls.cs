@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class AnimationControlls : MonoBehaviour {
 
@@ -28,11 +29,17 @@ public class AnimationControlls : MonoBehaviour {
 	public GameObject arCamera;
 	public GameObject mainMenu;
 
+	public List<FallObjectsIming> fallingObjects;
+
 	public FaceExpressions expTime;
 	public Renderer mainBody;
 
 	public GameObject instantiatedImage;
 	public int charecterSelectionIndex;
+	public Transform[] fallingObjectsParent;
+	public GameObject fallingObjectsEndParent;
+
+	private GameObject[] temp;
 
 	void OnEnable() 
 	{
@@ -67,8 +74,45 @@ public class AnimationControlls : MonoBehaviour {
 		audio.clip = audioTest;
 		audiolenght = audioTest.length;
 		audio.Play ();
-
+		//StartCoroutine (FallingObjects());
 		StartCoroutine (stopFirstanimation ());
+	}
+
+	public IEnumerator FallingObjects() {
+		foreach (var obj in fallingObjects) {
+			yield return new WaitForSeconds (obj.startTime);
+			StartCoroutine (InstantiateFallingObjects (obj.fallingObjects, obj.intervalTiming));
+			StartCoroutine (StopFallingObjects (obj.EndTime));
+		}
+	}
+
+	public IEnumerator StopFallingObjects( float stopTime) {
+		yield return new WaitForSeconds (stopTime);
+		StopCoroutine (InstantiateFallingObjects (temp,2));
+	}
+
+	public IEnumerator InstantiateFallingObjects(GameObject[] Obj, float timing) {
+		foreach (Transform position in fallingObjectsParent) {
+			GameObject clone = Instantiate (Obj [0], position,false);
+			clone.transform.parent = null;
+			StartCoroutine (DestroyObject (clone));
+			//StartCoroutine (MovebgFallObjects (clone, position));
+		}
+
+		yield return new WaitForSeconds (timing);
+		StartCoroutine (InstantiateFallingObjects (Obj,timing));
+	}
+
+	public IEnumerator DestroyObject(GameObject obj) {
+		yield return new WaitForSeconds (3f);
+		Destroy (obj);
+	}
+
+
+	public IEnumerator MovebgFallObjects(GameObject clone, Transform pos) {
+		yield return new WaitForSeconds (0.2f);
+		clone.transform.DOLocalMove (new Vector3(pos.localPosition.x,-pos.localPosition.y,pos.localPosition.z), 0.5f, false);
+		clone.transform.parent = null;
 	}
 
 	public IEnumerator emmotionStart(FaceExpressions Key) {

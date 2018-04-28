@@ -75,6 +75,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 			GameObject circ = obj.transform.GetChild(0).gameObject;
 			circ.GetComponent<Image> ().color = name.bgColor;
 			obj.GetComponentInChildren<RawImage> ().texture = rt;
+			obj.GetComponentInChildren<ButtonAnimator> ().fallingObjects = name.fallinObjects;
 			obj.transform.GetChild (1).GetComponent<Image> ().sprite = name.hutBG;
 			obj.transform.GetChild (3).GetComponent<Image> ().color = name.iconTextBgColor;
 			obj.transform.GetChild (4).GetComponent<Text> ().text = name.IconText;
@@ -140,7 +141,7 @@ public class InstantiateScrollItems : MonoBehaviour {
 	}
 
 
-	public void AnimationCalled(string key, AudioClip Audio, FaceExpressions Test)
+	public void AnimationCalled(string key, AudioClip Audio, FaceExpressions Test  )
 	{
 		SelectOption.SetActive (true);
 		if (effectinstantiated) {
@@ -196,9 +197,12 @@ public class ButtonNames {
 	public string IconText;
 	public Font IconTextfontFont;
 	public Color bgColor;
+	//public float[] fallingObjectsTiming;
 	public Color iconTextBgColor;
 	public Color iconTextColor;
 	public FaceExpressions expTime;
+	//public Sprite[] fallingobjects;
+	public List<FallObjectsIming> fallinObjects;
 }
 
 [System.Serializable]
@@ -228,4 +232,13 @@ public class AnimationTitle {
 	public Color bgColorCode;
 	public Color smallImagesColor;
 	public List<ButtonNames> Animations;
+
+}
+
+[System.Serializable]
+public class FallObjectsIming {
+	public float startTime;
+	public float EndTime;
+	public float intervalTiming;
+	public GameObject[] fallingObjects;
 }
